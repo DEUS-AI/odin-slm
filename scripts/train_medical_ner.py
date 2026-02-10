@@ -18,6 +18,10 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="unsloth")
 # Add project root to path
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root / "src"))
+sys.path.insert(0, str(project_root))
+
+# Import MLflow configuration
+from mlflow_config import setup_mlflow, get_git_commit_hash, log_system_info
 
 print("DEBUG: Importing yaml...")
 import yaml
@@ -93,6 +97,42 @@ def train_medical_ner(config_path):
     config = load_config(config_path)
     print("✓ Configuration loaded")
 
+    # Initialize MLflow tracking
+    mlflow = setup_mlflow()
+    run_name = f"train-{Path(config['training']['output_dir']).name}"
+    mlflow.start_run(run_name=run_name)
+
+    print(f"\n📊 MLflow run started: {run_name}")
+
+    # Log git commit hash for reproducibility
+    mlflow.set_tag("git_commit", get_git_commit_hash())
+    mlflow.set_tag("stage", "training")
+
+    # Log system information
+    log_system_info(mlflow)
+
+    # Log all hyperparameters
+    mlflow.log_params({
+        "model_name": config['model']['name'],
+        "max_seq_length": config['model']['max_seq_length'],
+        "load_in_4bit": config['model']['load_in_4bit'],
+        "num_train_epochs": config['training']['num_train_epochs'],
+        "per_device_train_batch_size": config['training']['per_device_train_batch_size'],
+        "gradient_accumulation_steps": config['training']['gradient_accumulation_steps'],
+        "learning_rate": config['training']['learning_rate'],
+        "warmup_steps": config['training']['warmup_steps'],
+        "weight_decay": config['training']['weight_decay'],
+        "max_grad_norm": config['training']['max_grad_norm'],
+        "lora_r": config['lora']['r'],
+        "lora_alpha": config['lora']['lora_alpha'],
+        "lora_dropout": config['lora']['lora_dropout'],
+        "optim": config['training']['optim'],
+        "seed": config['dataset']['seed'],
+    })
+
+    # Log config file as artifact
+    mlflow.log_artifact(config_path, "configs")
+
     # Load model
     print(f"\nLoading model: {config['model']['name']}...")
     model, tokenizer = FastLanguageModel.from_pretrained(
@@ -165,8 +205,9 @@ def train_medical_ner(config_path):
         max_seq_length=config['model']['max_seq_length'],
         args=training_args,
         packing=False,  # Don't pack sequences for instruction tuning
+        response_template="### Output:\n",  # CRITICAL: Only train on output portion
     )
-    print("✓ Trainer created")
+    print("✓ Trainer created (with response_template for output-only training)")
 
     # Check GPU info
     if torch.cuda.is_available():
@@ -203,6 +244,26 @@ def train_medical_ner(config_path):
     print("✓ TRAINING COMPLETE")
     print("=" * 80)
 
+    # Log training metrics to MLflow
+    train_history = trainer.state.log_history
+    if train_history:
+        # Get final metrics
+        final_train_loss = None
+        final_eval_loss = None
+
+        for entry in reversed(train_history):
+            if final_train_loss is None and 'loss' in entry:
+                final_train_loss = entry['loss']
+            if final_eval_loss is None and 'eval_loss' in entry:
+                final_eval_loss = entry['eval_loss']
+            if final_train_loss is not None and final_eval_loss is not None:
+                break
+
+        if final_train_loss is not None:
+            mlflow.log_metric("final_train_loss", final_train_loss)
+        if final_eval_loss is not None:
+            mlflow.log_metric("final_eval_loss", final_eval_loss)
+
     # Save final model
     output_dir = Path(config['training']['output_dir'])
     final_model_path = output_dir / "final_model"
@@ -211,6 +272,15 @@ def train_medical_ner(config_path):
     model.save_pretrained(final_model_path)
     tokenizer.save_pretrained(final_model_path)
     print("✓ Model saved")
+
+    # Log model artifacts to MLflow
+    mlflow.log_artifact(str(final_model_path / "adapter_config.json"), "model")
+    if (output_dir / "trainer_state.json").exists():
+        mlflow.log_artifact(str(output_dir / "trainer_state.json"), "training")
+
+    # End MLflow run
+    mlflow.end_run()
+    print("✓ MLflow run completed")
 
     print("\n" + "=" * 80)
     print("TRAINING SESSION COMPLETE")
