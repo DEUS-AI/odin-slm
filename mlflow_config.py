@@ -12,10 +12,13 @@ from pathlib import Path
 MLFLOW_TRACKING_URI = "file:./mlruns"
 MLFLOW_ARTIFACT_ROOT = "./mlartifacts"
 
-def setup_mlflow():
+def setup_mlflow(experiment_name="odin-slm-medical-ner"):
     """Initialize MLflow tracking
 
     Sets up local file-based MLflow tracking and creates necessary directories.
+
+    Args:
+        experiment_name: Name of the MLflow experiment to use
 
     Returns:
         mlflow module configured for tracking
@@ -26,15 +29,18 @@ def setup_mlflow():
     os.makedirs("mlruns", exist_ok=True)
     os.makedirs("mlartifacts", exist_ok=True)
 
-    # Ensure default experiment exists
-    try:
-        mlflow.get_experiment("0")
-    except:
-        # Create default experiment if it doesn't exist
-        try:
-            mlflow.create_experiment("Default", artifact_location=MLFLOW_ARTIFACT_ROOT)
-        except:
-            pass  # Experiment might already exist with different name
+    # Get or create experiment by name
+    experiment = mlflow.get_experiment_by_name(experiment_name)
+    if experiment is None:
+        experiment_id = mlflow.create_experiment(
+            experiment_name,
+            artifact_location=MLFLOW_ARTIFACT_ROOT
+        )
+    else:
+        experiment_id = experiment.experiment_id
+
+    # Set the experiment as active
+    mlflow.set_experiment(experiment_name)
 
     return mlflow
 
