@@ -1,0 +1,61 @@
+# Medical NER/RE Training Configuration v2
+# Improved configuration based on v1 results
+# Focus: Better relation extraction (target: 75% F1)
+
+model:
+  name: "unsloth/mistral-7b-v0.3-bnb-4bit"
+  max_seq_length: 512
+  load_in_4bit: true
+  dtype: "bfloat16"
+
+training:
+  output_dir: "./experiments/medical_ner_re_v2"
+  num_train_epochs: 7  # INCREASED from 3 - relations need more training
+  per_device_train_batch_size: 8
+  gradient_accumulation_steps: 2  # Effective batch size: 16
+  gradient_checkpointing: true
+  warmup_steps: 150  # INCREASED from 100
+  learning_rate: 2.0e-4
+  weight_decay: 0.01
+  logging_steps: 10
+  save_steps: 200
+  eval_steps: 200
+  evaluation_strategy: "steps"
+  save_strategy: "steps"
+  load_best_model_at_end: true
+  metric_for_best_model: "eval_loss"
+  fp16: false
+  bf16: true
+  optim: "adamw_8bit"
+  max_grad_norm: 1.0
+  save_total_limit: 3
+
+lora:
+  r: 32  # INCREASED from 16 - more capacity for relations
+  lora_alpha: 32  # Keep alpha = r
+  lora_dropout: 0.05
+  bias: "none"
+  task_type: "CAUSAL_LM"
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+dataset:
+  train_file: "data/datasets/formatted/train.json"
+  val_file: "data/datasets/formatted/val.json"
+  test_file: "data/datasets/formatted/test.json"
+  text_field: "input"
+  format: "instruction"
+  seed: 42
+
+wandb:
+  project: "odin-slm-medical-ner"
+  name: "mistral-7b-medical-ner-re-v2"
+  entity: null
+  enabled: false
+
+# IMPROVEMENTS IN v2:
+# - 7 epochs (vs 3) for better relation learning
+# - LoRA rank 32 (vs 16) for more capacity
+# - Increased warmup steps
+# - Expected results:
+#   - Entity F1: >85% (already at 84.8%)
+#   - Relation F1: 60-70% (vs 39.2%, aiming for 75%)

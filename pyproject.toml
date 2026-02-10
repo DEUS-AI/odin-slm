@@ -1,0 +1,45 @@
+[project]
+name = "odin-slm"
+version = "0.1.0"
+description = "SLM Training with Unsloth - Optimized for hypergraph integration and knowledge representation"
+requires-python = ">=3.12"
+dependencies = [
+    "unsloth[cu121-torch250]>=2024.10,<2024.11",  # Use October version compatible with older transformers
+    "torch>=2.5.0",
+    "transformers>=4.40.0,<4.46.0",  # Downgrade to avoid FP8BackendType requirement
+    "datasets>=3.2.0",
+    "accelerate>=0.20.0,<1.0.0",  # Use 0.x versions compatible with transformers 4.44
+    "bitsandbytes>=0.45.0",
+    "trl>=0.7.9,<0.12.0",  # Compatible with unsloth 2024.10
+    "peft>=0.13.0",
+    "wandb>=0.18.0",
+    "huggingface-hub>=0.26.0",
+    "numpy>=2.0.0",
+    "pandas>=2.2.0",
+    "scikit-learn>=1.6.0",
+    "matplotlib>=3.9.0",
+    "seaborn>=0.13.0",
+    "jupyter>=1.1.0",
+    "ipykernel>=6.29.0",
+    "rich>=13.0.0",  # Required by trl 0.10.x
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "black>=24.10.0",
+    "ruff>=0.8.0",
+    "mypy>=1.13.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]

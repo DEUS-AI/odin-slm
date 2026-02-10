@@ -1,0 +1,53 @@
+# Medical NER/RE Training Configuration v3 - Stage 2 (Relation Focus)
+# Strategy: Continue from Stage 1, add relation extraction
+# Target: Entity F1 95-97%, Relation F1 55-65%
+
+model:
+  name: "unsloth/mistral-7b-v0.3-bnb-4bit"
+  max_seq_length: 512
+  load_in_4bit: true
+  dtype: "bfloat16"
+
+training:
+  output_dir: "./experiments/medical_ner_re_v3/stage2"
+  num_train_epochs: 5  # More epochs for relation learning
+  per_device_train_batch_size: 8
+  gradient_accumulation_steps: 2
+  gradient_checkpointing: true
+  warmup_steps: 50  # Reduced warmup (continuing training)
+  learning_rate: 1.0e-4  # REDUCED by 50% for fine-tuning
+  weight_decay: 0.01
+  logging_steps: 10
+  save_steps: 200
+  eval_steps: 200
+  evaluation_strategy: "steps"
+  save_strategy: "steps"
+  load_best_model_at_end: true
+  metric_for_best_model: "eval_loss"
+  fp16: false
+  bf16: true
+  optim: "adamw_8bit"
+  max_grad_norm: 1.0
+  save_total_limit: 3
+
+lora:
+  r: 16  # Keep same rank as Stage 1
+  lora_alpha: 16
+  lora_dropout: 0.05
+  bias: "none"
+  task_type: "CAUSAL_LM"
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+dataset:
+  train_file: "data/datasets/formatted/train.json"  # Full format
+  val_file: "data/datasets/formatted/val.json"
+  test_file: "data/datasets/formatted/test.json"
+  text_field: "input"
+  format: "instruction"
+  seed: 42
+
+wandb:
+  project: "odin-slm-medical-ner"
+  name: "mistral-7b-medical-ner-v3-stage2"
+  entity: null
+  enabled: false

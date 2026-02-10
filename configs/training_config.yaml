@@ -1,0 +1,41 @@
+# Training Configuration for RTX 4090 Laptop GPU (16GB VRAM)
+# Optimized for CUDA 12.0 and Unsloth
+
+model:
+  name: "unsloth/llama-3.2-1b-instruct-bnb-4bit"  # Start with 1B parameter model
+  max_seq_length: 2048
+  load_in_4bit: true
+  dtype: "float16"  # Use float16 for RTX 4090
+
+training:
+  output_dir: "./experiments/runs"
+  num_train_epochs: 3
+  per_device_train_batch_size: 4  # Adjust based on memory usage
+  gradient_accumulation_steps: 4
+  gradient_checkpointing: true
+  warmup_steps: 100
+  learning_rate: 2.0e-4
+  weight_decay: 0.01
+  logging_steps: 10
+  save_steps: 500
+  eval_steps: 500
+  fp16: true  # Enable mixed precision training
+  optim: "adamw_8bit"  # Memory-efficient optimizer
+
+lora:
+  r: 16
+  lora_alpha: 16
+  lora_dropout: 0.05
+  bias: "none"
+  task_type: "CAUSAL_LM"
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+dataset:
+  train_split: 0.9
+  val_split: 0.1
+  seed: 42
+
+wandb:
+  project: "odin-slm"
+  entity: null  # Set your wandb username
+  enabled: false  # Enable after setting up wandb account
