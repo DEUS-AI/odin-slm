@@ -26,6 +26,16 @@ def setup_mlflow():
     os.makedirs("mlruns", exist_ok=True)
     os.makedirs("mlartifacts", exist_ok=True)
 
+    # Ensure default experiment exists
+    try:
+        mlflow.get_experiment("0")
+    except:
+        # Create default experiment if it doesn't exist
+        try:
+            mlflow.create_experiment("Default", artifact_location=MLFLOW_ARTIFACT_ROOT)
+        except:
+            pass  # Experiment might already exist with different name
+
     return mlflow
 
 
