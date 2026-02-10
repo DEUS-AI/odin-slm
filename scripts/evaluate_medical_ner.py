@@ -73,7 +73,12 @@ def parse_output_format(text: str) -> Tuple[List[Dict], List[Dict]]:
                 match = re.match(r'^\d+\.\s*(.+?)\s*-->\s*(.+)', line)
                 if match:
                     head, tail = match.groups()
-                    # Relation might be missing, skip
+                    # Fix: Don't skip! Add with 'unknown' relation type instead of silently losing it
+                    relations.append({
+                        'head': head.strip(),
+                        'relation': 'unknown',
+                        'tail': tail.strip()
+                    })
                     continue
 
             if match and len(match.groups()) == 3:
@@ -109,14 +114,18 @@ def generate_prediction(model, tokenizer, example: Dict, max_new_tokens: int = 3
     # Tokenize
     inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=512).to("cuda")
 
-    # Generate with repetition penalty to avoid duplicate relations
+    # Fix: Set random seeds for reproducible, deterministic generation
+    torch.manual_seed(42)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(42)
+        torch.cuda.manual_seed_all(42)
+
+    # Generate with deterministic decoding (do_sample=False for reproducibility)
     with torch.no_grad():
         outputs = model.generate(
             **inputs,
             max_new_tokens=max_new_tokens,
-            temperature=0.3,  # Slightly higher for diversity
-            do_sample=True,
-            top_p=0.9,
+            do_sample=False,  # Greedy decoding for determinism
             repetition_penalty=1.5,  # Strong penalty for repetitions
             no_repeat_ngram_size=3,  # Prevent repeating 3-grams
             pad_token_id=tokenizer.eos_token_id,
@@ -140,7 +149,8 @@ def deduplicate_relations(relations: List[Dict]) -> List[Dict]:
     unique_relations = []
 
     for rel in relations:
-        rel_tuple = (rel['head'].lower(), rel['relation'], rel['tail'].lower())
+        # Fix: Lowercase relation type for consistency with matching logic
+        rel_tuple = (rel['head'].lower(), rel['relation'].lower(), rel['tail'].lower())
         if rel_tuple not in seen:
             seen.add(rel_tuple)
             unique_relations.append(rel)
@@ -152,8 +162,9 @@ def calculate_entity_metrics(pred_entities: List[Dict], gold_entities: List[Dict
     """Calculate precision, recall, F1 for entities (exact match)"""
 
     # Convert to sets of (text, type) tuples for exact matching
-    pred_set = {(e['text'].lower(), e['type']) for e in pred_entities}
-    gold_set = {(e['text'].lower(), e['type']) for e in gold_entities}
+    # Fix: Lowercase entity TYPE to avoid case sensitivity issues
+    pred_set = {(e['text'].lower(), e['type'].lower()) for e in pred_entities}
+    gold_set = {(e['text'].lower(), e['type'].lower()) for e in gold_entities}
 
     # Calculate metrics
     true_positives = len(pred_set & gold_set)
@@ -178,8 +189,9 @@ def calculate_relation_metrics(pred_relations: List[Dict], gold_relations: List[
     """Calculate precision, recall, F1 for relations"""
 
     # Convert to sets of (head, relation, tail) tuples
-    pred_set = {(r['head'].lower(), r['relation'], r['tail'].lower()) for r in pred_relations}
-    gold_set = {(r['head'].lower(), r['relation'], r['tail'].lower()) for r in gold_relations}
+    # Fix: Lowercase relation TYPE to avoid case sensitivity issues
+    pred_set = {(r['head'].lower(), r['relation'].lower(), r['tail'].lower()) for r in pred_relations}
+    gold_set = {(r['head'].lower(), r['relation'].lower(), r['tail'].lower()) for r in gold_relations}
 
     # Calculate metrics
     true_positives = len(pred_set & gold_set)
@@ -240,6 +252,12 @@ def evaluate_model(model_path: str, test_data_path: str, num_samples: int = None
 
         # Parse prediction
         pred_entities, pred_relations = parse_output_format(pred_text)
+
+        # Fix: Add validation logging for debugging parsing issues
+        if len(pred_entities) == 0 and "### Entities:" in pred_text:
+            print(f"⚠️  WARNING: No entities parsed from output (example {i})")
+        if len(pred_relations) == 0 and "### Relations:" in pred_text and "None found" not in pred_text:
+            print(f"⚠️  WARNING: No relations parsed from output (example {i})")
 
         # Deduplicate relations (critical for accurate metrics)
         pred_relations = deduplicate_relations(pred_relations)
