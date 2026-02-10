@@ -37,7 +37,7 @@ print("DEBUG: Importing transformers...")
 from transformers import TrainingArguments
 
 print("DEBUG: Importing trl...")
-from trl import SFTTrainer
+from trl import SFTTrainer, DataCollatorForCompletionOnlyLM
 
 print("DEBUG: Importing datasets...")
 from datasets import Dataset
@@ -194,6 +194,17 @@ def train_medical_ner(config_path):
         report_to="wandb" if config['wandb']['enabled'] else "none",
     )
 
+    # Create data collator for completion-only training
+    # This ensures we only compute loss on the output portion, not the instruction/input
+    print("\nSetting up completion-only data collator...")
+    response_template = "### Output:\n"
+    collator = DataCollatorForCompletionOnlyLM(
+        response_template=response_template,
+        tokenizer=tokenizer,
+        mlm=False,
+    )
+    print("✓ Data collator created (trains only on output after '### Output:')")
+
     # Create trainer
     print("\nCreating trainer...")
     trainer = SFTTrainer(
@@ -203,11 +214,11 @@ def train_medical_ner(config_path):
         eval_dataset=val_dataset,
         dataset_text_field="text",
         max_seq_length=config['model']['max_seq_length'],
+        data_collator=collator,  # CRITICAL: Use completion-only collator
         args=training_args,
         packing=False,  # Don't pack sequences for instruction tuning
-        response_template="### Output:\n",  # CRITICAL: Only train on output portion
     )
-    print("✓ Trainer created (with response_template for output-only training)")
+    print("✓ Trainer created with completion-only training")
 
     # Check GPU info
     if torch.cuda.is_available():
