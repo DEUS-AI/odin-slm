@@ -52,8 +52,17 @@ def format_for_instruction_tuning(doc, entities_only=False):
         output = "\n".join(entities_lines)
     else:
         if doc.relations:
+            # Deduplicate relations (same head text, type, tail text)
+            seen_rels = set()
+            unique_relations = []
+            for r in doc.relations:
+                key = (r.head.text.lower(), r.type.lower(), r.tail.text.lower())
+                if key not in seen_rels:
+                    seen_rels.add(key)
+                    unique_relations.append(r)
+
             relations_lines = ["", "### Relations:"]
-            for i, r in enumerate(doc.relations, 1):
+            for i, r in enumerate(unique_relations, 1):
                 relations_lines.append(f"{i}. {r.head.text} --[{r.type}]--> {r.tail.text}")
         else:
             relations_lines = ["", "### Relations:", "None found."]
