@@ -1,6 +1,8 @@
 """Synthetic medical text generation for entity and relation extraction
 
 This module implements MedSyn-inspired synthetic data generation for medical NER/RE tasks.
+V2: Expanded knowledge base (30+ terms/category), more relation patterns,
+    diverse clinical note templates, fixed Lab_Test case bug.
 """
 
 import json
@@ -63,121 +65,239 @@ class MedicalTextGenerator:
     Based on MedSyn framework and recent LLM-based approaches.
     """
 
-    # Medical entity types
+    # Entity types used in training
     ENTITY_TYPES = [
         "Disease",
         "Symptom",
         "Drug",
         "Procedure",
-        "Anatomy",
         "Lab_Test",
-        "Gene",
-        "Protein",
-        "Chemical",
     ]
 
-    # Relation types
+    # Relation types used in training
     RELATION_TYPES = [
         "treats",
         "causes",
-        "prevents",
         "indicates",
-        "contraindicates",
         "interacts_with",
-        "part_of",
-        "associated_with",
     ]
 
-    # Medical knowledge templates
+    # Expanded medical knowledge base (~35 terms per category)
     KNOWLEDGE_BASE = {
         "diseases": [
-            "diabetes mellitus",
-            "hypertension",
-            "coronary artery disease",
-            "chronic kidney disease",
-            "asthma",
-            "rheumatoid arthritis",
-            "depression",
-            "migraine",
-            "pneumonia",
-            "urinary tract infection",
+            # Chronic diseases
+            "diabetes mellitus", "hypertension", "coronary artery disease",
+            "chronic kidney disease", "asthma", "rheumatoid arthritis",
+            "depression", "migraine", "COPD", "heart failure",
+            "osteoarthritis", "gout", "anemia", "osteoporosis",
+            "hypothyroidism", "hyperthyroidism",
+            # Acute conditions
+            "pneumonia", "urinary tract infection", "sepsis",
+            "pulmonary embolism", "deep vein thrombosis", "acute pancreatitis",
+            "meningitis", "cellulitis", "appendicitis", "diverticulitis",
+            # Neurological/autoimmune
+            "multiple sclerosis", "Parkinson's disease", "epilepsy",
+            "systemic lupus erythematosus", "Crohn's disease",
+            # Cardiovascular
+            "atrial fibrillation", "stroke", "peripheral artery disease",
+            "aortic stenosis",
         ],
         "symptoms": [
-            "chest pain",
-            "shortness of breath",
-            "fever",
-            "headache",
-            "fatigue",
-            "nausea",
-            "dizziness",
-            "cough",
-            "abdominal pain",
-            "joint pain",
+            # Cardiopulmonary
+            "chest pain", "shortness of breath", "palpitations", "wheezing",
+            "cough", "hemoptysis", "orthopnea",
+            # General/systemic
+            "fever", "fatigue", "weight loss", "night sweats", "malaise",
+            "chills", "loss of appetite",
+            # Neurological
+            "headache", "dizziness", "confusion", "numbness", "tingling",
+            "blurred vision", "seizures", "tremor",
+            # GI
+            "nausea", "vomiting", "abdominal pain", "diarrhea",
+            "constipation", "blood in stool", "dysphagia",
+            # MSK
+            "joint pain", "back pain", "muscle weakness", "swelling",
+            "joint stiffness",
+            # Other
+            "rash", "insomnia", "frequent urination", "excessive thirst",
+            "edema",
         ],
         "drugs": [
-            "metformin",
-            "lisinopril",
-            "atorvastatin",
-            "aspirin",
-            "levothyroxine",
-            "albuterol",
-            "metoprolol",
-            "omeprazole",
-            "amlodipine",
-            "losartan",
+            # Diabetes
+            "metformin", "insulin", "glipizide", "sitagliptin",
+            # Cardiovascular
+            "lisinopril", "atorvastatin", "aspirin", "metoprolol",
+            "amlodipine", "losartan", "warfarin", "clopidogrel",
+            "furosemide", "hydrochlorothiazide", "carvedilol",
+            "spironolactone", "apixaban", "digoxin",
+            # Respiratory
+            "albuterol", "montelukast", "fluticasone", "tiotropium",
+            # GI
+            "omeprazole", "pantoprazole",
+            # Pain/inflammation
+            "ibuprofen", "acetaminophen", "prednisone", "naproxen",
+            "colchicine",
+            # Antibiotics
+            "amoxicillin", "ciprofloxacin", "azithromycin", "doxycycline",
+            "vancomycin", "piperacillin-tazobactam",
+            # Psych/neuro
+            "sertraline", "gabapentin", "duloxetine", "levetiracetam",
+            # Other
+            "levothyroxine", "methotrexate", "hydroxychloroquine",
+            "allopurinol", "enoxaparin",
         ],
         "procedures": [
-            "coronary angiography",
-            "CT scan",
-            "MRI",
-            "blood pressure monitoring",
-            "glucose monitoring",
-            "physical therapy",
-            "endoscopy",
-            "biopsy",
-            "X-ray",
-            "ultrasound",
+            # Imaging
+            "CT scan", "MRI", "X-ray", "ultrasound", "PET scan",
+            "mammography", "echocardiogram",
+            # Interventional
+            "coronary angiography", "cardiac catheterization", "angioplasty",
+            "stent placement", "joint replacement", "appendectomy",
+            "cholecystectomy",
+            # Diagnostic
+            "endoscopy", "colonoscopy", "bronchoscopy", "lumbar puncture",
+            "bone marrow biopsy", "biopsy", "EEG", "EMG", "stress test",
+            "spirometry",
+            # Therapeutic
+            "dialysis", "blood transfusion", "wound debridement",
+            "physical therapy", "mechanical ventilation",
+            # Monitoring
+            "blood pressure monitoring", "glucose monitoring",
+            "cardiac monitoring", "pulse oximetry",
         ],
         "lab_tests": [
-            "complete blood count",
-            "lipid panel",
-            "hemoglobin A1c",
-            "creatinine",
-            "blood glucose",
+            # Hematology
+            "complete blood count", "coagulation panel", "prothrombin time",
+            "INR", "D-dimer", "blood culture", "ferritin", "ESR",
+            # Chemistry
+            "basic metabolic panel", "electrolyte panel", "creatinine",
+            "blood glucose", "blood urea nitrogen", "serum albumin",
+            "bilirubin", "amylase", "lipase", "serum lactate",
+            # Cardiac
+            "troponin", "BNP", "lipid panel",
+            # Endocrine/metabolic
+            "hemoglobin A1c", "thyroid function tests", "vitamin D level",
+            # Inflammatory/immune
+            "C-reactive protein", "procalcitonin",
+            # Liver/kidney
             "liver function tests",
-            "thyroid function tests",
-            "urinalysis",
-            "C-reactive protein",
-            "troponin",
+            # Urinary
+            "urinalysis", "urine culture",
+            # Other
+            "arterial blood gas", "PSA",
         ],
     }
 
-    # Relation templates
-    RELATION_TEMPLATES = {
-        "treats": [
-            "{drug} is used to treat {disease}",
-            "{drug} effectively manages {disease}",
-            "Treatment with {drug} improved {disease}",
-            "The patient was prescribed {drug} for {disease}",
+    # Category name to entity type mapping (fixes the .rstrip("s").title() bug)
+    _CATEGORY_TO_TYPE = {
+        "diseases": "Disease",
+        "symptoms": "Symptom",
+        "drugs": "Drug",
+        "procedures": "Procedure",
+        "lab_tests": "Lab_Test",
+    }
+
+    # Diverse intro templates
+    INTROS = [
+        "A {age}-year-old {gender} presents to the clinic. ",
+        "A {age}-year-old {gender} was admitted to the hospital. ",
+        "Patient is a {age}-year-old {gender} presenting for evaluation. ",
+        "Clinical note: {age}-year-old {gender} seen in follow-up. ",
+        "Emergency department evaluation of a {age}-year-old {gender}. ",
+        "Outpatient visit for a {age}-year-old {gender}. ",
+        "Consultation note for a {age}-year-old {gender}. ",
+        "Progress note: {age}-year-old {gender}, day {day} of admission. ",
+        "A {age}-year-old {gender} presents with multiple complaints. ",
+        "Discharge summary: {age}-year-old {gender}. ",
+        "Medical record review: {age}-year-old {gender}. ",
+        "Inpatient note for a {age}-year-old {gender}. ",
+        "Preoperative assessment: {age}-year-old {gender}. ",
+        "Urgent care visit: {age}-year-old {gender}. ",
+    ]
+
+    # Diverse connectors between entities
+    CONNECTORS = [
+        # Additive
+        ". The patient also has ",
+        ". Additionally, ",
+        ". Furthermore, ",
+        ". The patient reports ",
+        ". History is also notable for ",
+        ". Past medical history includes ",
+        ". The workup revealed ",
+        ". Also noted is ",
+        ". Of note, ",
+        # Causal/sequential
+        ". This led to evaluation with ",
+        ". Given these findings, ",
+        ". As a result, ",
+        ". Subsequently, ",
+        ". This prompted ",
+        # Examination-related
+        ". Physical examination demonstrates ",
+        ". On exam, ",
+        ". Assessment reveals ",
+        ". Review of systems positive for ",
+        ". Findings include ",
+        # Treatment-related
+        ". The patient was started on ",
+        ". Management included ",
+        ". Treatment plan includes ",
+        ". Currently taking ",
+        ". Medications include ",
+        # Lab/test-related
+        ". Laboratory studies showed ",
+        ". Diagnostic testing with ",
+        ". Imaging with ",
+        ". Results of ",
+        ". Ordered ",
+    ]
+
+    # Type-specific suffixes added after entity mention
+    ENTITY_SUFFIXES = {
+        "Drug": [
+            " was prescribed", " was administered", " therapy initiated",
+            " was started", " was continued", " dosage adjusted",
+            " twice daily", " as needed", " daily",
+            "",  # sometimes no suffix
         ],
-        "causes": [
-            "{disease} caused {symptom}",
-            "{symptom} was attributed to {disease}",
-            "Patient presented with {symptom} due to {disease}",
-            "{disease} resulted in {symptom}",
+        "Disease": [
+            " was diagnosed", " is well-controlled", " has been stable",
+            " with recent exacerbation", " requiring management",
+            " per history",
+            "", "", "",  # often no suffix
         ],
-        "indicates": [
-            "{test} showed elevated levels indicating {disease}",
-            "{symptom} may indicate {disease}",
-            "{test} results suggest {disease}",
-            "The presence of {symptom} indicates possible {disease}",
+        "Symptom": [
+            " reported by patient", " worsening over past week",
+            " with onset 3 days ago", " intermittent in nature",
+            " described as moderate", " acute onset",
+            "", "", "", "",  # usually no suffix
         ],
-        "prevents": [
-            "{drug} helps prevent {disease}",
-            "{procedure} can prevent {disease} progression",
-            "Prophylactic {drug} prevents {disease}",
+        "Procedure": [
+            " was performed", " was ordered", " completed",
+            " showed normal results", " is scheduled",
+            " results reviewed",
+        ],
+        "Lab_Test": [
+            " was ordered", " results pending", " showed abnormal values",
+            " within normal limits", " elevated",
+            " results reviewed", " drawn on admission",
         ],
     }
+
+    # Conclusions
+    CONCLUSIONS = [
+        ". Follow-up scheduled in {weeks} weeks.",
+        ". Patient to return for reassessment.",
+        ". Continue current management and monitor.",
+        ". Will reassess at next visit.",
+        ". Plan discussed with patient.",
+        ". Patient counseled on medication compliance.",
+        ". Referral placed for specialist evaluation.",
+        ". Discharge with above medications and follow-up.",
+        ". Close monitoring recommended.",
+        ". Patient advised on lifestyle modifications.",
+    ]
 
     def __init__(self, seed: int = 42):
         """Initialize the generator
@@ -219,7 +339,7 @@ class MedicalTextGenerator:
         )
 
     def _select_random_entities(self, n: int) -> List[Tuple[str, str]]:
-        """Select random medical entities
+        """Select random medical entities ensuring type diversity
 
         Args:
             n: Number of entities to select
@@ -229,11 +349,22 @@ class MedicalTextGenerator:
         """
         entities = []
         categories = list(self.KNOWLEDGE_BASE.keys())
+        selected_categories = []
 
-        for _ in range(n):
-            category = random.choice(categories)
+        for i in range(n):
+            # Ensure at least 2 different categories for first picks
+            if i < 2:
+                available = [c for c in categories if c not in selected_categories]
+                if available:
+                    category = random.choice(available)
+                else:
+                    category = random.choice(categories)
+            else:
+                category = random.choice(categories)
+
+            selected_categories.append(category)
             entity_text = random.choice(self.KNOWLEDGE_BASE[category])
-            entity_type = category.rstrip("s").title()  # disease -> Disease
+            entity_type = self._CATEGORY_TO_TYPE[category]
             entities.append((entity_text, entity_type))
 
         return entities
@@ -249,40 +380,24 @@ class MedicalTextGenerator:
         Returns:
             Tuple of (text, list of Entity objects with positions)
         """
-        # Template for clinical notes
-        templates = [
-            "Patient presents with {symptom}. Physical examination reveals {finding}. "
-            "Laboratory tests including {test} were ordered. "
-            "Diagnosis: {disease}. Treatment plan: {drug} prescribed.",
-            "Chief complaint: {symptom}. History: Patient has {disease} managed with {drug}. "
-            "Assessment: {finding} on examination. Plan: {procedure} scheduled.",
-            "A {age}-year-old patient with known {disease} presents with worsening {symptom}. "
-            "{test} showed {finding}. Started on {drug}.",
-        ]
-
-        # Build text with entities
         text_parts = []
         entities = []
         current_pos = 0
 
-        # Start with template
-        intro = random.choice(
-            [
-                f"A {random.randint(25, 80)}-year-old patient presents to the clinic. ",
-                "Medical record summary: ",
-                "Clinical case: ",
-            ]
-        )
+        # Rich intro
+        age = random.randint(18, 85)
+        gender = random.choice(["male", "female"])
+        day = random.randint(1, 14)
+
+        intro = random.choice(self.INTROS).format(age=age, gender=gender, day=day)
         text_parts.append(intro)
         current_pos = len(intro)
 
         # Add entities with context
         for i, (entity_text, entity_type) in enumerate(entities_data):
-            # Add context before entity
+            # Add connector before entity (except first)
             if i > 0:
-                connector = random.choice(
-                    [" The patient also has ", ". Additionally, ", ". Patient reports ", " with "]
-                )
+                connector = random.choice(self.CONNECTORS)
                 text_parts.append(connector)
                 current_pos += len(connector)
 
@@ -295,14 +410,15 @@ class MedicalTextGenerator:
 
             current_pos = end
 
-            # Add context after entity
-            if entity_type == "Drug":
-                suffix = random.choice([" was prescribed", " administered", " treatment"])
+            # Add type-appropriate suffix
+            suffixes = self.ENTITY_SUFFIXES.get(entity_type, [""])
+            suffix = random.choice(suffixes)
+            if suffix:
                 text_parts.append(suffix)
                 current_pos += len(suffix)
 
         # Add conclusion
-        conclusion = ". Follow-up scheduled."
+        conclusion = random.choice(self.CONCLUSIONS).format(weeks=random.randint(1, 12))
         text_parts.append(conclusion)
 
         text = "".join(text_parts)
@@ -326,28 +442,45 @@ class MedicalTextGenerator:
         if len(entities) < 2:
             return relations
 
-        # Define valid relation patterns
+        # Valid relation patterns (head_type, tail_type) -> relation_type
         valid_patterns = {
             ("Drug", "Disease"): "treats",
+            ("Drug", "Symptom"): "treats",         # drugs treat symptoms
+            ("Procedure", "Disease"): "treats",     # procedures treat diseases
             ("Disease", "Symptom"): "causes",
-            ("Lab_test", "Disease"): "indicates",
+            ("Drug", "Symptom"): "causes",          # drugs cause side effects
+            ("Lab_Test", "Disease"): "indicates",   # Fixed: was "Lab_test" (case bug)
             ("Symptom", "Disease"): "indicates",
+            ("Lab_Test", "Symptom"): "indicates",   # labs indicate symptoms
             ("Drug", "Drug"): "interacts_with",
         }
 
-        # Try to create relations
+        # Drug→Symptom can be either treats or causes (randomly chosen per pair)
+        drug_symptom_ambiguous = True
+
+        seen_pairs = set()
         attempts = 0
-        max_attempts = n * 10
+        max_attempts = n * 15
 
         while len(relations) < n and attempts < max_attempts:
-            # Select random pair
             head = random.choice(entities)
             tail = random.choice([e for e in entities if e != head])
 
-            # Check if valid pattern
+            # Avoid duplicate entity pairs
+            pair_key = (head.text, tail.text)
+            if pair_key in seen_pairs:
+                attempts += 1
+                continue
+
             pattern = (head.type, tail.type)
             if pattern in valid_patterns:
                 rel_type = valid_patterns[pattern]
+
+                # Drug→Symptom: randomly choose treats or causes
+                if pattern == ("Drug", "Symptom") and drug_symptom_ambiguous:
+                    rel_type = random.choice(["treats", "causes"])
+
+                seen_pairs.add(pair_key)
                 relations.append(
                     Relation(
                         type=rel_type,
