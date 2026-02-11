@@ -197,9 +197,17 @@ def train_medical_ner(config_path):
     # Create data collator for completion-only training
     # This masks instruction and input, only training on the output
     print("\nCreating data collator...")
+
+    # IMPORTANT: response_template must be tokenized, not a string!
+    # The collator finds these token IDs in the input and masks everything before them
+    response_template = "\n### Output:\n"
+    response_template_ids = tokenizer.encode(response_template, add_special_tokens=False)
+
+    print(f"Response template: {repr(response_template)}")
+    print(f"Response template token IDs: {response_template_ids}")
+
     collator = DataCollatorForCompletionOnlyLM(
-        instruction_template="### Instruction:",
-        response_template="### Output:",
+        response_template=response_template_ids,
         tokenizer=tokenizer,
         mlm=False,
     )
