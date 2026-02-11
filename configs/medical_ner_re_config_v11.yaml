@@ -1,0 +1,54 @@
+# Medical NER/RE Training Configuration - V11
+# Same as V10 but with 5 epochs (up from 3)
+# V10 loss was still ~0.228 at epoch 3, suggesting room to learn more
+# Optimized for RTX 4090 Laptop GPU (16GB VRAM)
+
+model:
+  name: "unsloth/Meta-Llama-3.1-8B-bnb-4bit"
+  max_seq_length: 512
+  load_in_4bit: true
+  dtype: "bfloat16"
+
+training:
+  output_dir: "./experiments/medical_ner_re_v11"
+  num_train_epochs: 5
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 8    # Effective batch size: 16
+  gradient_checkpointing: true
+  warmup_steps: 100
+  learning_rate: 2.0e-4
+  weight_decay: 0.01
+  logging_steps: 10
+  save_steps: 250
+  eval_steps: 250
+  evaluation_strategy: "steps"
+  save_strategy: "steps"
+  load_best_model_at_end: true
+  metric_for_best_model: "eval_loss"
+  fp16: false
+  bf16: true
+  optim: "adamw_8bit"
+  max_grad_norm: 1.0
+  save_total_limit: 3
+
+lora:
+  r: 32
+  lora_alpha: 32
+  lora_dropout: 0
+  bias: "none"
+  task_type: "CAUSAL_LM"
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+dataset:
+  train_file: "data/datasets/formatted/train.json"
+  val_file: "data/datasets/formatted/val.json"
+  test_file: "data/datasets/formatted/test.json"
+  text_field: "input"
+  format: "instruction"
+  seed: 42
+
+wandb:
+  project: "odin-slm-medical-ner"
+  name: "llama31-8b-base-medical-ner-re-v11"
+  entity: null
+  enabled: false
