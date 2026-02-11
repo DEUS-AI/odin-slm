@@ -98,7 +98,7 @@ def extract_ground_truth(example: Dict) -> Tuple[List[Dict], List[Dict]]:
     return parse_output_format(output_text)
 
 
-def generate_prediction(model, tokenizer, example: Dict, max_new_tokens: int = 300) -> str:
+def generate_prediction(model, tokenizer, example: Dict, max_new_tokens: int = 512) -> str:
     """Generate prediction for a single example"""
 
     # Format prompt
@@ -121,13 +121,14 @@ def generate_prediction(model, tokenizer, example: Dict, max_new_tokens: int = 3
         torch.cuda.manual_seed_all(42)
 
     # Generate with deterministic decoding (do_sample=False for reproducibility)
+    # NOTE: repetition_penalty and no_repeat_ngram_size were REMOVED in V10 -
+    # they sabotage entity extraction by preventing the model from copying
+    # entity text verbatim from the input (which is exactly what NER requires)
     with torch.no_grad():
         outputs = model.generate(
             **inputs,
             max_new_tokens=max_new_tokens,
             do_sample=False,  # Greedy decoding for determinism
-            repetition_penalty=1.5,  # Strong penalty for repetitions
-            no_repeat_ngram_size=3,  # Prevent repeating 3-grams
             pad_token_id=tokenizer.eos_token_id,
         )
 
