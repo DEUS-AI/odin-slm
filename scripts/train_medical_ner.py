@@ -37,7 +37,7 @@ print("DEBUG: Importing transformers...")
 from transformers import TrainingArguments
 
 print("DEBUG: Importing trl...")
-from trl import SFTTrainer, DataCollatorForCompletionOnlyLM
+from trl import SFTTrainer
 
 print("DEBUG: Importing datasets...")
 from datasets import Dataset
@@ -51,17 +51,16 @@ def load_config(config_path):
         return yaml.safe_load(f)
 
 
-def load_instruction_dataset(file_path):
+def load_instruction_dataset(file_path, eos_token=""):
     """Load instruction-formatted dataset"""
     print(f"Loading dataset from {file_path}...")
 
     with open(file_path, "r") as f:
         data = json.load(f)
 
-    # Format for SFTTrainer
+    # Format for SFTTrainer (Alpaca-style for base models)
     formatted_data = []
     for item in data:
-        # Combine instruction, input, and output into a single text
         text = f"""### Instruction:
 {item['instruction']}
 
@@ -69,7 +68,7 @@ def load_instruction_dataset(file_path):
 {item['input']}
 
 ### Output:
-{item['output']}"""
+{item['output']}{eos_token}"""
         formatted_data.append({"text": text})
 
     dataset = Dataset.from_list(formatted_data)
@@ -162,10 +161,12 @@ def train_medical_ner(config_path):
     total_params = sum(p.numel() for p in model.parameters())
     print(f"\nTrainable parameters: {trainable_params:,} / {total_params:,} ({trainable_params/total_params*100:.2f}%)")
 
-    # Load datasets
+    # Load datasets (append EOS token so model learns when to stop generating)
     print("\nLoading datasets...")
-    train_dataset = load_instruction_dataset(config['dataset']['train_file'])
-    val_dataset = load_instruction_dataset(config['dataset']['val_file'])
+    eos_token = tokenizer.eos_token or ""
+    print(f"EOS token: {repr(eos_token)}")
+    train_dataset = load_instruction_dataset(config['dataset']['train_file'], eos_token=eos_token)
+    val_dataset = load_instruction_dataset(config['dataset']['val_file'], eos_token=eos_token)
 
     # Training arguments
     print("\nSetting up training arguments...")
@@ -177,7 +178,8 @@ def train_medical_ner(config_path):
         gradient_accumulation_steps=config['training']['gradient_accumulation_steps'],
         warmup_steps=config['training']['warmup_steps'],
         learning_rate=config['training']['learning_rate'],
-        fp16=config['training']['fp16'],
+        fp16=config['training'].get('fp16', False),
+        bf16=config['training'].get('bf16', False),
         logging_steps=config['training']['logging_steps'],
         save_steps=config['training']['save_steps'],
         eval_steps=config['training']['eval_steps'],
@@ -194,26 +196,7 @@ def train_medical_ner(config_path):
         report_to="wandb" if config['wandb']['enabled'] else "none",
     )
 
-    # Create data collator for completion-only training
-    # This masks instruction and input, only training on the output
-    print("\nCreating data collator...")
-
-    # IMPORTANT: response_template must be tokenized, not a string!
-    # The collator finds these token IDs in the input and masks everything before them
-    response_template = "\n### Output:\n"
-    response_template_ids = tokenizer.encode(response_template, add_special_tokens=False)
-
-    print(f"Response template: {repr(response_template)}")
-    print(f"Response template token IDs: {response_template_ids}")
-
-    collator = DataCollatorForCompletionOnlyLM(
-        response_template=response_template_ids,
-        tokenizer=tokenizer,
-        mlm=False,
-    )
-    print("✓ Data collator created (trains only on output tokens)")
-
-    # Create trainer with completion-only training
+    # Create trainer (standard instruction tuning)
     print("\nCreating trainer...")
     trainer = SFTTrainer(
         model=model,
@@ -222,11 +205,10 @@ def train_medical_ner(config_path):
         eval_dataset=val_dataset,
         dataset_text_field="text",
         max_seq_length=config['model']['max_seq_length'],
-        data_collator=collator,
         args=training_args,
         packing=False,
     )
-    print("✓ Trainer created (completion-only training on outputs)")
+    print("✓ Trainer created (standard instruction tuning)")
 
     # Check GPU info
     if torch.cuda.is_available():
