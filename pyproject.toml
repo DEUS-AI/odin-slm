@@ -4,13 +4,13 @@ version = "0.1.0"
 description = "SLM Training with Unsloth - Optimized for hypergraph integration and knowledge representation"
 requires-python = ">=3.12"
 dependencies = [
-    "unsloth[cu121-torch250]>=2024.10,<2024.11",  # Use October version compatible with older transformers
-    "torch>=2.5.0",
-    "transformers>=4.40.0,<4.46.0",  # Downgrade to avoid FP8BackendType requirement
+    "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git",
+    "torch>=2.6.0",
+    "transformers>=4.45.0",
     "datasets>=3.2.0",
-    "accelerate>=0.20.0,<1.0.0",  # Use 0.x versions compatible with transformers 4.44
+    "accelerate>=0.20.0",
     "bitsandbytes>=0.45.0",
-    "trl>=0.7.9,<0.12.0",  # Compatible with unsloth 2024.10
+    "trl>=0.12.0",
     "peft>=0.13.0",
     "wandb>=0.18.0",
     "mlflow>=2.10.0",
@@ -22,7 +22,7 @@ dependencies = [
     "seaborn>=0.13.0",
     "jupyter>=1.1.0",
     "ipykernel>=6.29.0",
-    "rich>=13.0.0",  # Required by trl 0.10.x
+    "rich>=13.0.0",
 ]
 
 [project.optional-dependencies]
@@ -32,6 +32,9 @@ dev = [
     "ruff>=0.8.0",
     "mypy>=1.13.0",
 ]
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [build-system]
 requires = ["hatchling"]

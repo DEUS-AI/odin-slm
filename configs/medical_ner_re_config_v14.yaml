@@ -1,0 +1,63 @@
+# Medical NER/RE Training Configuration - V14
+# Combined real + synthetic data, reduced epochs to prevent overfitting
+# Data sources:
+#   - ADE Corpus V2: 3413 train (Drug + Symptom, causes)
+#   - BC5CDR: 212 train (Drug + Disease, causes)
+#   - BioRED: 21 train (Drug + Disease, causes/treats/associated_with/interacts_with)
+#   - Synthetic V2: 911 train subsample (all 5 entity types, 4 relation types)
+#   - Total: 4557 train, 800 val, 786 test
+# Entity types: Disease, Drug, Lab_Test, Procedure, Symptom
+# Relation types: associated_with, causes, indicates, interacts_with, treats
+# V13 result (ADE only): Entity F1=0.918, Relation F1=0.842 (overfit after epoch 1)
+# Key change: 2 epochs to prevent overfitting
+# Optimized for RTX 4090 Laptop GPU (16GB VRAM)
+
+model:
+  name: "unsloth/Meta-Llama-3.1-8B-bnb-4bit"
+  max_seq_length: 512
+  load_in_4bit: true
+  dtype: "bfloat16"
+
+training:
+  output_dir: "./experiments/medical_ner_re_v14"
+  num_train_epochs: 2
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 8    # Effective batch size: 16
+  gradient_checkpointing: true
+  warmup_steps: 50
+  learning_rate: 2.0e-4
+  weight_decay: 0.01
+  logging_steps: 10
+  save_steps: 143                   # ~2x per epoch (4557/16 ≈ 285 steps/epoch)
+  eval_steps: 143
+  evaluation_strategy: "steps"
+  save_strategy: "steps"
+  load_best_model_at_end: true
+  metric_for_best_model: "eval_loss"
+  fp16: false
+  bf16: true
+  optim: "adamw_8bit"
+  max_grad_norm: 1.0
+  save_total_limit: 3
+
+lora:
+  r: 32
+  lora_alpha: 32
+  lora_dropout: 0
+  bias: "none"
+  task_type: "CAUSAL_LM"
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+dataset:
+  train_file: "data/datasets/combined_v14/train.json"
+  val_file: "data/datasets/combined_v14/val.json"
+  test_file: "data/datasets/combined_v14/test.json"
+  text_field: "input"
+  format: "instruction"
+  seed: 42
+
+wandb:
+  project: "odin-slm-medical-ner"
+  name: "llama31-8b-base-medical-ner-re-v14-combined"
+  entity: null
+  enabled: false

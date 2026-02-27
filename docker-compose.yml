@@ -1,0 +1,19 @@
+services:
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v3.9.0
+    container_name: odin-mlflow
+    user: "1000:1000"
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlflow-data/db:/mlflow/db
+      - ./mlflow-data/mlartifacts:/mlflow/mlartifacts
+    command: >
+      mlflow server
+      --host 0.0.0.0
+      --port 5000
+      --backend-store-uri sqlite:///mlflow/db/mlflow.db
+      --default-artifact-root mlflow-artifacts:/
+      --serve-artifacts
+      --artifacts-destination /mlflow/mlartifacts
+    restart: unless-stopped

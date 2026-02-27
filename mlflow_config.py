@@ -2,20 +2,22 @@
 
 This module provides configuration and utility functions for MLflow experiment tracking.
 All training and evaluation runs are automatically logged to MLflow for reproducibility.
+
+MLflow server runs in Docker (see docker-compose.yml).
 """
 
 import mlflow
 import os
 from pathlib import Path
 
-# MLflow tracking configuration
-MLFLOW_TRACKING_URI = "file:./mlruns"
-MLFLOW_ARTIFACT_ROOT = "./mlartifacts"
+# MLflow tracking configuration - Docker server
+MLFLOW_TRACKING_URI = os.environ.get("MLFLOW_TRACKING_URI", "http://localhost:5000")
+
 
 def setup_mlflow(experiment_name="odin-slm-medical-ner"):
     """Initialize MLflow tracking
 
-    Sets up local file-based MLflow tracking and creates necessary directories.
+    Connects to the MLflow tracking server (Docker-based).
 
     Args:
         experiment_name: Name of the MLflow experiment to use
@@ -25,19 +27,10 @@ def setup_mlflow(experiment_name="odin-slm-medical-ner"):
     """
     mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 
-    # Create directories if they don't exist
-    os.makedirs("mlruns", exist_ok=True)
-    os.makedirs("mlartifacts", exist_ok=True)
-
     # Get or create experiment by name
     experiment = mlflow.get_experiment_by_name(experiment_name)
     if experiment is None:
-        experiment_id = mlflow.create_experiment(
-            experiment_name,
-            artifact_location=MLFLOW_ARTIFACT_ROOT
-        )
-    else:
-        experiment_id = experiment.experiment_id
+        mlflow.create_experiment(experiment_name)
 
     # Set the experiment as active
     mlflow.set_experiment(experiment_name)

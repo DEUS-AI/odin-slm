@@ -213,7 +213,7 @@ def calculate_relation_metrics(pred_relations: List[Dict], gold_relations: List[
     }
 
 
-def evaluate_model(model_path: str, test_data_path: str, num_samples: int = None):
+def evaluate_model(model_path: str, test_data_path: str, num_samples: int = None, output_file: str = None, run_name: str = None):
     """Main evaluation function"""
 
     print("=" * 80)
@@ -356,43 +356,88 @@ def evaluate_model(model_path: str, test_data_path: str, num_samples: int = None
     print(f"Relation F1 (Micro): {relation_f1_micro:.3f} {'✓ Target: 0.75' if relation_f1_micro >= 0.75 else '✗ Target: 0.75'}")
 
     # Save detailed results
-    results_path = Path(model_path).parent / "evaluation_results.json"
+    results_path = Path(output_file) if output_file else Path(model_path).parent / "evaluation_results.json"
+    results_data = {
+        'entity_metrics': {
+            'macro': {
+                'precision': entity_precision,
+                'recall': entity_recall,
+                'f1': entity_f1
+            },
+            'micro': {
+                'precision': entity_precision_micro,
+                'recall': entity_recall_micro,
+                'f1': entity_f1_micro,
+                'tp': entity_tp,
+                'fp': entity_fp,
+                'fn': entity_fn
+            }
+        },
+        'relation_metrics': {
+            'macro': {
+                'precision': relation_precision,
+                'recall': relation_recall,
+                'f1': relation_f1
+            },
+            'micro': {
+                'precision': relation_precision_micro,
+                'recall': relation_recall_micro,
+                'f1': relation_f1_micro,
+                'tp': relation_tp,
+                'fp': relation_fp,
+                'fn': relation_fn
+            }
+        },
+        'predictions': predictions[:10]  # Save first 10 for inspection
+    }
     with open(results_path, 'w') as f:
-        json.dump({
-            'entity_metrics': {
-                'macro': {
-                    'precision': entity_precision,
-                    'recall': entity_recall,
-                    'f1': entity_f1
-                },
-                'micro': {
-                    'precision': entity_precision_micro,
-                    'recall': entity_recall_micro,
-                    'f1': entity_f1_micro,
-                    'tp': entity_tp,
-                    'fp': entity_fp,
-                    'fn': entity_fn
-                }
-            },
-            'relation_metrics': {
-                'macro': {
-                    'precision': relation_precision,
-                    'recall': relation_recall,
-                    'f1': relation_f1
-                },
-                'micro': {
-                    'precision': relation_precision_micro,
-                    'recall': relation_recall_micro,
-                    'f1': relation_f1_micro,
-                    'tp': relation_tp,
-                    'fp': relation_fp,
-                    'fn': relation_fn
-                }
-            },
-            'predictions': predictions[:10]  # Save first 10 for inspection
-        }, f, indent=2)
+        json.dump(results_data, f, indent=2)
 
     print(f"\n✓ Detailed results saved to: {results_path}")
+
+    # Log to MLflow
+    try:
+        sys.path.insert(0, str(project_root))
+        from mlflow_config import setup_mlflow, get_git_commit_hash
+        mlflow = setup_mlflow()
+
+        version_name = run_name or Path(model_path).parent.name
+        test_set_name = Path(test_data_path).parent.name
+        mlflow_run_name = f"eval-{version_name}-{test_set_name}"
+
+        with mlflow.start_run(run_name=mlflow_run_name):
+            mlflow.set_tag("git_commit", get_git_commit_hash())
+            mlflow.set_tag("stage", "evaluation")
+            mlflow.set_tag("model_version", version_name)
+            mlflow.set_tag("test_set", test_set_name)
+
+            mlflow.log_param("model_path", model_path)
+            mlflow.log_param("test_data_path", test_data_path)
+            mlflow.log_param("num_samples", num_samples or len(test_data))
+
+            mlflow.log_metrics({
+                "entity_f1_micro": entity_f1_micro,
+                "entity_precision_micro": entity_precision_micro,
+                "entity_recall_micro": entity_recall_micro,
+                "entity_f1_macro": entity_f1,
+                "entity_tp": entity_tp,
+                "entity_fp": entity_fp,
+                "entity_fn": entity_fn,
+                "relation_f1_micro": relation_f1_micro,
+                "relation_precision_micro": relation_precision_micro,
+                "relation_recall_micro": relation_recall_micro,
+                "relation_f1_macro": relation_f1,
+                "relation_tp": relation_tp,
+                "relation_fp": relation_fp,
+                "relation_fn": relation_fn,
+            })
+
+            mlflow.log_artifact(str(results_path), "evaluation")
+
+        print(f"✓ MLflow run logged: {mlflow_run_name}")
+    except Exception as e:
+        print(f"⚠️  MLflow logging failed (non-fatal): {e}")
+
     print("\n" + "=" * 80)
 
     return {
@@ -422,11 +467,23 @@ def main():
         default=None,
         help="Number of test samples to evaluate (default: all)",
     )
+    parser.add_argument(
+        "--output_file",
+        type=str,
+        default=None,
+        help="Output file path for results JSON (default: <model_dir>/../evaluation_results.json)",
+    )
+    parser.add_argument(
+        "--run_name",
+        type=str,
+        default=None,
+        help="MLflow run name override (default: derived from model path)",
+    )
 
     args = parser.parse_args()
 
     # Run evaluation
-    results = evaluate_model(args.model, args.test_data, args.num_samples)
+    results = evaluate_model(args.model, args.test_data, args.num_samples, args.output_file, args.run_name)
 
     return results
 
