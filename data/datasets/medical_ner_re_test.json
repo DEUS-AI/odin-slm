@@ -1,0 +1,7470 @@
+[
+  {
+    "text": "A 63-year-old patient presents to the clinic. asthma. Additionally, headache with shortness of breath. Additionally, lipid panel with thyroid function tests. Patient reports diabetes mellitus The patient also has chronic kidney disease. Additionally, abdominal pain. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "asthma",
+        "type": "Disease",
+        "start": 46,
+        "end": 52
+      },
+      {
+        "text": "headache",
+        "type": "Symptom",
+        "start": 68,
+        "end": 76
+      },
+      {
+        "text": "shortness of breath",
+        "type": "Symptom",
+        "start": 82,
+        "end": 101
+      },
+      {
+        "text": "lipid panel",
+        "type": "Lab_Test",
+        "start": 117,
+        "end": 128
+      },
+      {
+        "text": "thyroid function tests",
+        "type": "Lab_Test",
+        "start": 134,
+        "end": 156
+      },
+      {
+        "text": "diabetes mellitus",
+        "type": "Disease",
+        "start": 174,
+        "end": 191
+      },
+      {
+        "text": "chronic kidney disease",
+        "type": "Disease",
+        "start": 213,
+        "end": 235
+      },
+      {
+        "text": "abdominal pain",
+        "type": "Symptom",
+        "start": 251,
+        "end": 265
+      }
+    ],
+    "relations": [
+      {
+        "type": "causes",
+        "head": {
+          "text": "chronic kidney disease",
+          "type": "Disease",
+          "start": 213,
+          "end": 235
+        },
+        "tail": {
+          "text": "shortness of breath",
+          "type": "Symptom",
+          "start": 82,
+          "end": 101
+        },
+        "confidence": 0.89
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "headache",
+          "type": "Symptom",
+          "start": 68,
+          "end": 76
+        },
+        "tail": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 174,
+          "end": 191
+        },
+        "confidence": 0.89
+      }
+    ],
+    "metadata": {
+      "id": 1,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: creatinine. Patient reports diabetes mellitus The patient also has fatigue. Additionally, chronic kidney disease. Additionally, depression. Additionally, omeprazole administered with atorvastatin administered. Additionally, albuterol treatment. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "creatinine",
+        "type": "Lab_Test",
+        "start": 15,
+        "end": 25
+      },
+      {
+        "text": "diabetes mellitus",
+        "type": "Disease",
+        "start": 43,
+        "end": 60
+      },
+      {
+        "text": "fatigue",
+        "type": "Symptom",
+        "start": 82,
+        "end": 89
+      },
+      {
+        "text": "chronic kidney disease",
+        "type": "Disease",
+        "start": 105,
+        "end": 127
+      },
+      {
+        "text": "depression",
+        "type": "Disease",
+        "start": 143,
+        "end": 153
+      },
+      {
+        "text": "omeprazole",
+        "type": "Drug",
+        "start": 169,
+        "end": 179
+      },
+      {
+        "text": "atorvastatin",
+        "type": "Drug",
+        "start": 198,
+        "end": 210
+      },
+      {
+        "text": "albuterol",
+        "type": "Drug",
+        "start": 239,
+        "end": 248
+      }
+    ],
+    "relations": [
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "omeprazole",
+          "type": "Drug",
+          "start": 169,
+          "end": 179
+        },
+        "tail": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 239,
+          "end": 248
+        },
+        "confidence": 0.97
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "omeprazole",
+          "type": "Drug",
+          "start": 169,
+          "end": 179
+        },
+        "tail": {
+          "text": "chronic kidney disease",
+          "type": "Disease",
+          "start": 105,
+          "end": 127
+        },
+        "confidence": 0.89
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "omeprazole",
+          "type": "Drug",
+          "start": 169,
+          "end": 179
+        },
+        "tail": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 43,
+          "end": 60
+        },
+        "confidence": 0.95
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "atorvastatin",
+          "type": "Drug",
+          "start": 198,
+          "end": 210
+        },
+        "tail": {
+          "text": "omeprazole",
+          "type": "Drug",
+          "start": 169,
+          "end": 179
+        },
+        "confidence": 0.92
+      }
+    ],
+    "metadata": {
+      "id": 2,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: abdominal pain with blood glucose The patient also has thyroid function tests The patient also has thyroid function tests The patient also has aspirin was prescribed. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "abdominal pain",
+        "type": "Symptom",
+        "start": 15,
+        "end": 29
+      },
+      {
+        "text": "blood glucose",
+        "type": "Lab_Test",
+        "start": 35,
+        "end": 48
+      },
+      {
+        "text": "thyroid function tests",
+        "type": "Lab_Test",
+        "start": 70,
+        "end": 92
+      },
+      {
+        "text": "thyroid function tests",
+        "type": "Lab_Test",
+        "start": 114,
+        "end": 136
+      },
+      {
+        "text": "aspirin",
+        "type": "Drug",
+        "start": 158,
+        "end": 165
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 3,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 74-year-old patient presents to the clinic. lipid panel. Additionally, migraine with pneumonia. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "lipid panel",
+        "type": "Lab_Test",
+        "start": 46,
+        "end": 57
+      },
+      {
+        "text": "migraine",
+        "type": "Disease",
+        "start": 73,
+        "end": 81
+      },
+      {
+        "text": "pneumonia",
+        "type": "Disease",
+        "start": 87,
+        "end": 96
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 4,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 76-year-old patient presents to the clinic. hypertension. Additionally, physical therapy. Additionally, endoscopy. Additionally, coronary angiography with diabetes mellitus. Additionally, physical therapy. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "hypertension",
+        "type": "Disease",
+        "start": 46,
+        "end": 58
+      },
+      {
+        "text": "physical therapy",
+        "type": "Procedure",
+        "start": 74,
+        "end": 90
+      },
+      {
+        "text": "endoscopy",
+        "type": "Procedure",
+        "start": 106,
+        "end": 115
+      },
+      {
+        "text": "coronary angiography",
+        "type": "Procedure",
+        "start": 131,
+        "end": 151
+      },
+      {
+        "text": "diabetes mellitus",
+        "type": "Disease",
+        "start": 157,
+        "end": 174
+      },
+      {
+        "text": "physical therapy",
+        "type": "Procedure",
+        "start": 190,
+        "end": 206
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 5,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 41-year-old patient presents to the clinic. creatinine. Patient reports troponin. Additionally, urinary tract infection. Patient reports depression with troponin. Additionally, liver function tests. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "creatinine",
+        "type": "Lab_Test",
+        "start": 46,
+        "end": 56
+      },
+      {
+        "text": "troponin",
+        "type": "Lab_Test",
+        "start": 74,
+        "end": 82
+      },
+      {
+        "text": "urinary tract infection",
+        "type": "Disease",
+        "start": 98,
+        "end": 121
+      },
+      {
+        "text": "depression",
+        "type": "Disease",
+        "start": 139,
+        "end": 149
+      },
+      {
+        "text": "troponin",
+        "type": "Lab_Test",
+        "start": 155,
+        "end": 163
+      },
+      {
+        "text": "liver function tests",
+        "type": "Lab_Test",
+        "start": 179,
+        "end": 199
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 6,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: nausea The patient also has fatigue The patient also has urinalysis. Patient reports metformin was prescribed. Patient reports depression. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "nausea",
+        "type": "Symptom",
+        "start": 24,
+        "end": 30
+      },
+      {
+        "text": "fatigue",
+        "type": "Symptom",
+        "start": 52,
+        "end": 59
+      },
+      {
+        "text": "urinalysis",
+        "type": "Lab_Test",
+        "start": 81,
+        "end": 91
+      },
+      {
+        "text": "metformin",
+        "type": "Drug",
+        "start": 109,
+        "end": 118
+      },
+      {
+        "text": "depression",
+        "type": "Disease",
+        "start": 151,
+        "end": 161
+      }
+    ],
+    "relations": [
+      {
+        "type": "indicates",
+        "head": {
+          "text": "fatigue",
+          "type": "Symptom",
+          "start": 52,
+          "end": 59
+        },
+        "tail": {
+          "text": "depression",
+          "type": "Disease",
+          "start": 151,
+          "end": 161
+        },
+        "confidence": 0.93
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "depression",
+          "type": "Disease",
+          "start": 151,
+          "end": 161
+        },
+        "tail": {
+          "text": "fatigue",
+          "type": "Symptom",
+          "start": 52,
+          "end": 59
+        },
+        "confidence": 0.99
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "fatigue",
+          "type": "Symptom",
+          "start": 52,
+          "end": 59
+        },
+        "tail": {
+          "text": "depression",
+          "type": "Disease",
+          "start": 151,
+          "end": 161
+        },
+        "confidence": 0.85
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "fatigue",
+          "type": "Symptom",
+          "start": 52,
+          "end": 59
+        },
+        "tail": {
+          "text": "depression",
+          "type": "Disease",
+          "start": 151,
+          "end": 161
+        },
+        "confidence": 0.9
+      }
+    ],
+    "metadata": {
+      "id": 7,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: chronic kidney disease with physical therapy. Patient reports lisinopril was prescribed The patient also has albuterol administered. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "chronic kidney disease",
+        "type": "Disease",
+        "start": 15,
+        "end": 37
+      },
+      {
+        "text": "physical therapy",
+        "type": "Procedure",
+        "start": 43,
+        "end": 59
+      },
+      {
+        "text": "lisinopril",
+        "type": "Drug",
+        "start": 77,
+        "end": 87
+      },
+      {
+        "text": "albuterol",
+        "type": "Drug",
+        "start": 124,
+        "end": 133
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 77,
+          "end": 87
+        },
+        "tail": {
+          "text": "chronic kidney disease",
+          "type": "Disease",
+          "start": 15,
+          "end": 37
+        },
+        "confidence": 0.87
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 124,
+          "end": 133
+        },
+        "tail": {
+          "text": "chronic kidney disease",
+          "type": "Disease",
+          "start": 15,
+          "end": 37
+        },
+        "confidence": 0.93
+      }
+    ],
+    "metadata": {
+      "id": 8,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 60-year-old patient presents to the clinic. metoprolol was prescribed with rheumatoid arthritis with liver function tests. Additionally, asthma. Patient reports blood glucose with physical therapy The patient also has glucose monitoring. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "metoprolol",
+        "type": "Drug",
+        "start": 46,
+        "end": 56
+      },
+      {
+        "text": "rheumatoid arthritis",
+        "type": "Disease",
+        "start": 77,
+        "end": 97
+      },
+      {
+        "text": "liver function tests",
+        "type": "Lab_Test",
+        "start": 103,
+        "end": 123
+      },
+      {
+        "text": "asthma",
+        "type": "Disease",
+        "start": 139,
+        "end": 145
+      },
+      {
+        "text": "blood glucose",
+        "type": "Lab_Test",
+        "start": 163,
+        "end": 176
+      },
+      {
+        "text": "physical therapy",
+        "type": "Procedure",
+        "start": 182,
+        "end": 198
+      },
+      {
+        "text": "glucose monitoring",
+        "type": "Procedure",
+        "start": 220,
+        "end": 238
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "metoprolol",
+          "type": "Drug",
+          "start": 46,
+          "end": 56
+        },
+        "tail": {
+          "text": "asthma",
+          "type": "Disease",
+          "start": 139,
+          "end": 145
+        },
+        "confidence": 0.93
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "metoprolol",
+          "type": "Drug",
+          "start": 46,
+          "end": 56
+        },
+        "tail": {
+          "text": "rheumatoid arthritis",
+          "type": "Disease",
+          "start": 77,
+          "end": 97
+        },
+        "confidence": 0.97
+      }
+    ],
+    "metadata": {
+      "id": 9,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: pneumonia with shortness of breath. Additionally, MRI with X-ray with troponin. Patient reports omeprazole was prescribed. Patient reports C-reactive protein. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "pneumonia",
+        "type": "Disease",
+        "start": 15,
+        "end": 24
+      },
+      {
+        "text": "shortness of breath",
+        "type": "Symptom",
+        "start": 30,
+        "end": 49
+      },
+      {
+        "text": "MRI",
+        "type": "Procedure",
+        "start": 65,
+        "end": 68
+      },
+      {
+        "text": "X-ray",
+        "type": "Procedure",
+        "start": 74,
+        "end": 79
+      },
+      {
+        "text": "troponin",
+        "type": "Lab_Test",
+        "start": 85,
+        "end": 93
+      },
+      {
+        "text": "omeprazole",
+        "type": "Drug",
+        "start": 111,
+        "end": 121
+      },
+      {
+        "text": "C-reactive protein",
+        "type": "Lab_Test",
+        "start": 154,
+        "end": 172
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "omeprazole",
+          "type": "Drug",
+          "start": 111,
+          "end": 121
+        },
+        "tail": {
+          "text": "pneumonia",
+          "type": "Disease",
+          "start": 15,
+          "end": 24
+        },
+        "confidence": 0.98
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "pneumonia",
+          "type": "Disease",
+          "start": 15,
+          "end": 24
+        },
+        "tail": {
+          "text": "shortness of breath",
+          "type": "Symptom",
+          "start": 30,
+          "end": 49
+        },
+        "confidence": 0.95
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "shortness of breath",
+          "type": "Symptom",
+          "start": 30,
+          "end": 49
+        },
+        "tail": {
+          "text": "pneumonia",
+          "type": "Disease",
+          "start": 15,
+          "end": 24
+        },
+        "confidence": 0.89
+      }
+    ],
+    "metadata": {
+      "id": 10,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: diabetes mellitus The patient also has headache. Additionally, urinary tract infection with headache. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "diabetes mellitus",
+        "type": "Disease",
+        "start": 24,
+        "end": 41
+      },
+      {
+        "text": "headache",
+        "type": "Symptom",
+        "start": 63,
+        "end": 71
+      },
+      {
+        "text": "urinary tract infection",
+        "type": "Disease",
+        "start": 87,
+        "end": 110
+      },
+      {
+        "text": "headache",
+        "type": "Symptom",
+        "start": 116,
+        "end": 124
+      }
+    ],
+    "relations": [
+      {
+        "type": "causes",
+        "head": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 87,
+          "end": 110
+        },
+        "tail": {
+          "text": "headache",
+          "type": "Symptom",
+          "start": 63,
+          "end": 71
+        },
+        "confidence": 0.88
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 24,
+          "end": 41
+        },
+        "tail": {
+          "text": "headache",
+          "type": "Symptom",
+          "start": 63,
+          "end": 71
+        },
+        "confidence": 0.99
+      }
+    ],
+    "metadata": {
+      "id": 11,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: losartan treatment. Additionally, endoscopy The patient also has shortness of breath. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "losartan",
+        "type": "Drug",
+        "start": 15,
+        "end": 23
+      },
+      {
+        "text": "endoscopy",
+        "type": "Procedure",
+        "start": 49,
+        "end": 58
+      },
+      {
+        "text": "shortness of breath",
+        "type": "Symptom",
+        "start": 80,
+        "end": 99
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 12,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: physical therapy The patient also has cough. Additionally, nausea The patient also has albuterol was prescribed with losartan administered. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "physical therapy",
+        "type": "Procedure",
+        "start": 24,
+        "end": 40
+      },
+      {
+        "text": "cough",
+        "type": "Symptom",
+        "start": 62,
+        "end": 67
+      },
+      {
+        "text": "nausea",
+        "type": "Symptom",
+        "start": 83,
+        "end": 89
+      },
+      {
+        "text": "albuterol",
+        "type": "Drug",
+        "start": 111,
+        "end": 120
+      },
+      {
+        "text": "losartan",
+        "type": "Drug",
+        "start": 141,
+        "end": 149
+      }
+    ],
+    "relations": [
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 111,
+          "end": 120
+        },
+        "tail": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 141,
+          "end": 149
+        },
+        "confidence": 0.92
+      }
+    ],
+    "metadata": {
+      "id": 13,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 80-year-old patient presents to the clinic. hemoglobin A1c. Patient reports metformin administered with pneumonia with atorvastatin administered. Additionally, CT scan. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "hemoglobin A1c",
+        "type": "Lab_Test",
+        "start": 46,
+        "end": 60
+      },
+      {
+        "text": "metformin",
+        "type": "Drug",
+        "start": 78,
+        "end": 87
+      },
+      {
+        "text": "pneumonia",
+        "type": "Disease",
+        "start": 106,
+        "end": 115
+      },
+      {
+        "text": "atorvastatin",
+        "type": "Drug",
+        "start": 121,
+        "end": 133
+      },
+      {
+        "text": "CT scan",
+        "type": "Procedure",
+        "start": 162,
+        "end": 169
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "metformin",
+          "type": "Drug",
+          "start": 78,
+          "end": 87
+        },
+        "tail": {
+          "text": "pneumonia",
+          "type": "Disease",
+          "start": 106,
+          "end": 115
+        },
+        "confidence": 0.97
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "metformin",
+          "type": "Drug",
+          "start": 78,
+          "end": 87
+        },
+        "tail": {
+          "text": "pneumonia",
+          "type": "Disease",
+          "start": 106,
+          "end": 115
+        },
+        "confidence": 0.89
+      }
+    ],
+    "metadata": {
+      "id": 14,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: fever with lipid panel. Patient reports chest pain. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "fever",
+        "type": "Symptom",
+        "start": 24,
+        "end": 29
+      },
+      {
+        "text": "lipid panel",
+        "type": "Lab_Test",
+        "start": 35,
+        "end": 46
+      },
+      {
+        "text": "chest pain",
+        "type": "Symptom",
+        "start": 64,
+        "end": 74
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 15,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 27-year-old patient presents to the clinic. joint pain with complete blood count with losartan administered. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "joint pain",
+        "type": "Symptom",
+        "start": 46,
+        "end": 56
+      },
+      {
+        "text": "complete blood count",
+        "type": "Lab_Test",
+        "start": 62,
+        "end": 82
+      },
+      {
+        "text": "losartan",
+        "type": "Drug",
+        "start": 88,
+        "end": 96
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 16,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 60-year-old patient presents to the clinic. fatigue with biopsy The patient also has diabetes mellitus. Additionally, creatinine The patient also has fatigue. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "fatigue",
+        "type": "Symptom",
+        "start": 46,
+        "end": 53
+      },
+      {
+        "text": "biopsy",
+        "type": "Procedure",
+        "start": 59,
+        "end": 65
+      },
+      {
+        "text": "diabetes mellitus",
+        "type": "Disease",
+        "start": 87,
+        "end": 104
+      },
+      {
+        "text": "creatinine",
+        "type": "Lab_Test",
+        "start": 120,
+        "end": 130
+      },
+      {
+        "text": "fatigue",
+        "type": "Symptom",
+        "start": 152,
+        "end": 159
+      }
+    ],
+    "relations": [
+      {
+        "type": "indicates",
+        "head": {
+          "text": "fatigue",
+          "type": "Symptom",
+          "start": 152,
+          "end": 159
+        },
+        "tail": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 87,
+          "end": 104
+        },
+        "confidence": 0.97
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "fatigue",
+          "type": "Symptom",
+          "start": 46,
+          "end": 53
+        },
+        "tail": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 87,
+          "end": 104
+        },
+        "confidence": 0.91
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 87,
+          "end": 104
+        },
+        "tail": {
+          "text": "fatigue",
+          "type": "Symptom",
+          "start": 152,
+          "end": 159
+        },
+        "confidence": 0.95
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 87,
+          "end": 104
+        },
+        "tail": {
+          "text": "fatigue",
+          "type": "Symptom",
+          "start": 152,
+          "end": 159
+        },
+        "confidence": 0.99
+      }
+    ],
+    "metadata": {
+      "id": 17,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 45-year-old patient presents to the clinic. complete blood count. Patient reports lipid panel. Patient reports fatigue. Patient reports shortness of breath with CT scan. Additionally, migraine. Additionally, fatigue with diabetes mellitus. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "complete blood count",
+        "type": "Lab_Test",
+        "start": 46,
+        "end": 66
+      },
+      {
+        "text": "lipid panel",
+        "type": "Lab_Test",
+        "start": 84,
+        "end": 95
+      },
+      {
+        "text": "fatigue",
+        "type": "Symptom",
+        "start": 113,
+        "end": 120
+      },
+      {
+        "text": "shortness of breath",
+        "type": "Symptom",
+        "start": 138,
+        "end": 157
+      },
+      {
+        "text": "CT scan",
+        "type": "Procedure",
+        "start": 163,
+        "end": 170
+      },
+      {
+        "text": "migraine",
+        "type": "Disease",
+        "start": 186,
+        "end": 194
+      },
+      {
+        "text": "fatigue",
+        "type": "Symptom",
+        "start": 210,
+        "end": 217
+      },
+      {
+        "text": "diabetes mellitus",
+        "type": "Disease",
+        "start": 223,
+        "end": 240
+      }
+    ],
+    "relations": [
+      {
+        "type": "causes",
+        "head": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 223,
+          "end": 240
+        },
+        "tail": {
+          "text": "fatigue",
+          "type": "Symptom",
+          "start": 113,
+          "end": 120
+        },
+        "confidence": 0.95
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 223,
+          "end": 240
+        },
+        "tail": {
+          "text": "fatigue",
+          "type": "Symptom",
+          "start": 113,
+          "end": 120
+        },
+        "confidence": 1.0
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "fatigue",
+          "type": "Symptom",
+          "start": 210,
+          "end": 217
+        },
+        "tail": {
+          "text": "migraine",
+          "type": "Disease",
+          "start": 186,
+          "end": 194
+        },
+        "confidence": 0.89
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "fatigue",
+          "type": "Symptom",
+          "start": 210,
+          "end": 217
+        },
+        "tail": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 223,
+          "end": 240
+        },
+        "confidence": 0.92
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 223,
+          "end": 240
+        },
+        "tail": {
+          "text": "fatigue",
+          "type": "Symptom",
+          "start": 210,
+          "end": 217
+        },
+        "confidence": 0.99
+      }
+    ],
+    "metadata": {
+      "id": 18,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: liver function tests The patient also has headache. Patient reports blood glucose. Additionally, shortness of breath The patient also has asthma. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "liver function tests",
+        "type": "Lab_Test",
+        "start": 24,
+        "end": 44
+      },
+      {
+        "text": "headache",
+        "type": "Symptom",
+        "start": 66,
+        "end": 74
+      },
+      {
+        "text": "blood glucose",
+        "type": "Lab_Test",
+        "start": 92,
+        "end": 105
+      },
+      {
+        "text": "shortness of breath",
+        "type": "Symptom",
+        "start": 121,
+        "end": 140
+      },
+      {
+        "text": "asthma",
+        "type": "Disease",
+        "start": 162,
+        "end": 168
+      }
+    ],
+    "relations": [
+      {
+        "type": "indicates",
+        "head": {
+          "text": "headache",
+          "type": "Symptom",
+          "start": 66,
+          "end": 74
+        },
+        "tail": {
+          "text": "asthma",
+          "type": "Disease",
+          "start": 162,
+          "end": 168
+        },
+        "confidence": 0.85
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "asthma",
+          "type": "Disease",
+          "start": 162,
+          "end": 168
+        },
+        "tail": {
+          "text": "headache",
+          "type": "Symptom",
+          "start": 66,
+          "end": 74
+        },
+        "confidence": 0.95
+      }
+    ],
+    "metadata": {
+      "id": 19,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: metoprolol treatment with coronary artery disease. Additionally, diabetes mellitus with omeprazole treatment The patient also has hypertension with abdominal pain with dizziness. Patient reports physical therapy. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "metoprolol",
+        "type": "Drug",
+        "start": 15,
+        "end": 25
+      },
+      {
+        "text": "coronary artery disease",
+        "type": "Disease",
+        "start": 41,
+        "end": 64
+      },
+      {
+        "text": "diabetes mellitus",
+        "type": "Disease",
+        "start": 80,
+        "end": 97
+      },
+      {
+        "text": "omeprazole",
+        "type": "Drug",
+        "start": 103,
+        "end": 113
+      },
+      {
+        "text": "hypertension",
+        "type": "Disease",
+        "start": 145,
+        "end": 157
+      },
+      {
+        "text": "abdominal pain",
+        "type": "Symptom",
+        "start": 163,
+        "end": 177
+      },
+      {
+        "text": "dizziness",
+        "type": "Symptom",
+        "start": 183,
+        "end": 192
+      },
+      {
+        "text": "physical therapy",
+        "type": "Procedure",
+        "start": 210,
+        "end": 226
+      }
+    ],
+    "relations": [
+      {
+        "type": "indicates",
+        "head": {
+          "text": "abdominal pain",
+          "type": "Symptom",
+          "start": 163,
+          "end": 177
+        },
+        "tail": {
+          "text": "coronary artery disease",
+          "type": "Disease",
+          "start": 41,
+          "end": 64
+        },
+        "confidence": 0.92
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "abdominal pain",
+          "type": "Symptom",
+          "start": 163,
+          "end": 177
+        },
+        "tail": {
+          "text": "hypertension",
+          "type": "Disease",
+          "start": 145,
+          "end": 157
+        },
+        "confidence": 0.99
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "dizziness",
+          "type": "Symptom",
+          "start": 183,
+          "end": 192
+        },
+        "tail": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 80,
+          "end": 97
+        },
+        "confidence": 0.88
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "metoprolol",
+          "type": "Drug",
+          "start": 15,
+          "end": 25
+        },
+        "tail": {
+          "text": "coronary artery disease",
+          "type": "Disease",
+          "start": 41,
+          "end": 64
+        },
+        "confidence": 0.97
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "omeprazole",
+          "type": "Drug",
+          "start": 103,
+          "end": 113
+        },
+        "tail": {
+          "text": "coronary artery disease",
+          "type": "Disease",
+          "start": 41,
+          "end": 64
+        },
+        "confidence": 0.97
+      }
+    ],
+    "metadata": {
+      "id": 20,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: creatinine. Additionally, creatinine. Additionally, nausea. Patient reports joint pain. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "creatinine",
+        "type": "Lab_Test",
+        "start": 24,
+        "end": 34
+      },
+      {
+        "text": "creatinine",
+        "type": "Lab_Test",
+        "start": 50,
+        "end": 60
+      },
+      {
+        "text": "nausea",
+        "type": "Symptom",
+        "start": 76,
+        "end": 82
+      },
+      {
+        "text": "joint pain",
+        "type": "Symptom",
+        "start": 100,
+        "end": 110
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 21,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: hemoglobin A1c. Patient reports coronary artery disease with losartan treatment. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "hemoglobin A1c",
+        "type": "Lab_Test",
+        "start": 15,
+        "end": 29
+      },
+      {
+        "text": "coronary artery disease",
+        "type": "Disease",
+        "start": 47,
+        "end": 70
+      },
+      {
+        "text": "losartan",
+        "type": "Drug",
+        "start": 76,
+        "end": 84
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 76,
+          "end": 84
+        },
+        "tail": {
+          "text": "coronary artery disease",
+          "type": "Disease",
+          "start": 47,
+          "end": 70
+        },
+        "confidence": 0.92
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 76,
+          "end": 84
+        },
+        "tail": {
+          "text": "coronary artery disease",
+          "type": "Disease",
+          "start": 47,
+          "end": 70
+        },
+        "confidence": 0.86
+      }
+    ],
+    "metadata": {
+      "id": 22,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: creatinine with biopsy The patient also has dizziness The patient also has omeprazole was prescribed The patient also has endoscopy with rheumatoid arthritis The patient also has physical therapy. Patient reports albuterol was prescribed. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "creatinine",
+        "type": "Lab_Test",
+        "start": 15,
+        "end": 25
+      },
+      {
+        "text": "biopsy",
+        "type": "Procedure",
+        "start": 31,
+        "end": 37
+      },
+      {
+        "text": "dizziness",
+        "type": "Symptom",
+        "start": 59,
+        "end": 68
+      },
+      {
+        "text": "omeprazole",
+        "type": "Drug",
+        "start": 90,
+        "end": 100
+      },
+      {
+        "text": "endoscopy",
+        "type": "Procedure",
+        "start": 137,
+        "end": 146
+      },
+      {
+        "text": "rheumatoid arthritis",
+        "type": "Disease",
+        "start": 152,
+        "end": 172
+      },
+      {
+        "text": "physical therapy",
+        "type": "Procedure",
+        "start": 194,
+        "end": 210
+      },
+      {
+        "text": "albuterol",
+        "type": "Drug",
+        "start": 228,
+        "end": 237
+      }
+    ],
+    "relations": [
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "omeprazole",
+          "type": "Drug",
+          "start": 90,
+          "end": 100
+        },
+        "tail": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 228,
+          "end": 237
+        },
+        "confidence": 0.91
+      }
+    ],
+    "metadata": {
+      "id": 23,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: coronary artery disease. Additionally, hypertension. Patient reports creatinine. Patient reports endoscopy. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "coronary artery disease",
+        "type": "Disease",
+        "start": 24,
+        "end": 47
+      },
+      {
+        "text": "hypertension",
+        "type": "Disease",
+        "start": 63,
+        "end": 75
+      },
+      {
+        "text": "creatinine",
+        "type": "Lab_Test",
+        "start": 93,
+        "end": 103
+      },
+      {
+        "text": "endoscopy",
+        "type": "Procedure",
+        "start": 121,
+        "end": 130
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 24,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: lisinopril treatment with coronary angiography The patient also has atorvastatin administered. Patient reports urinalysis. Patient reports lisinopril was prescribed. Patient reports CT scan. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "lisinopril",
+        "type": "Drug",
+        "start": 24,
+        "end": 34
+      },
+      {
+        "text": "coronary angiography",
+        "type": "Procedure",
+        "start": 50,
+        "end": 70
+      },
+      {
+        "text": "atorvastatin",
+        "type": "Drug",
+        "start": 92,
+        "end": 104
+      },
+      {
+        "text": "urinalysis",
+        "type": "Lab_Test",
+        "start": 135,
+        "end": 145
+      },
+      {
+        "text": "lisinopril",
+        "type": "Drug",
+        "start": 163,
+        "end": 173
+      },
+      {
+        "text": "CT scan",
+        "type": "Procedure",
+        "start": 206,
+        "end": 213
+      }
+    ],
+    "relations": [
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 163,
+          "end": 173
+        },
+        "tail": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 24,
+          "end": 34
+        },
+        "confidence": 0.93
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 24,
+          "end": 34
+        },
+        "tail": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 163,
+          "end": 173
+        },
+        "confidence": 0.92
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 163,
+          "end": 173
+        },
+        "tail": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 24,
+          "end": 34
+        },
+        "confidence": 0.9
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 163,
+          "end": 173
+        },
+        "tail": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 24,
+          "end": 34
+        },
+        "confidence": 0.92
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "atorvastatin",
+          "type": "Drug",
+          "start": 92,
+          "end": 104
+        },
+        "tail": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 24,
+          "end": 34
+        },
+        "confidence": 0.93
+      }
+    ],
+    "metadata": {
+      "id": 25,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: cough with X-ray with troponin. Patient reports nausea. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "cough",
+        "type": "Symptom",
+        "start": 24,
+        "end": 29
+      },
+      {
+        "text": "X-ray",
+        "type": "Procedure",
+        "start": 35,
+        "end": 40
+      },
+      {
+        "text": "troponin",
+        "type": "Lab_Test",
+        "start": 46,
+        "end": 54
+      },
+      {
+        "text": "nausea",
+        "type": "Symptom",
+        "start": 72,
+        "end": 78
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 26,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: asthma. Additionally, pneumonia with C-reactive protein. Additionally, rheumatoid arthritis. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "asthma",
+        "type": "Disease",
+        "start": 15,
+        "end": 21
+      },
+      {
+        "text": "pneumonia",
+        "type": "Disease",
+        "start": 37,
+        "end": 46
+      },
+      {
+        "text": "C-reactive protein",
+        "type": "Lab_Test",
+        "start": 52,
+        "end": 70
+      },
+      {
+        "text": "rheumatoid arthritis",
+        "type": "Disease",
+        "start": 86,
+        "end": 106
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 27,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: hemoglobin A1c. Patient reports CT scan. Additionally, cough with metformin was prescribed. Patient reports coronary angiography. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "hemoglobin A1c",
+        "type": "Lab_Test",
+        "start": 15,
+        "end": 29
+      },
+      {
+        "text": "CT scan",
+        "type": "Procedure",
+        "start": 47,
+        "end": 54
+      },
+      {
+        "text": "cough",
+        "type": "Symptom",
+        "start": 70,
+        "end": 75
+      },
+      {
+        "text": "metformin",
+        "type": "Drug",
+        "start": 81,
+        "end": 90
+      },
+      {
+        "text": "coronary angiography",
+        "type": "Procedure",
+        "start": 123,
+        "end": 143
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 28,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: liver function tests with chest pain with amlodipine treatment. Additionally, atorvastatin was prescribed. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "liver function tests",
+        "type": "Lab_Test",
+        "start": 15,
+        "end": 35
+      },
+      {
+        "text": "chest pain",
+        "type": "Symptom",
+        "start": 41,
+        "end": 51
+      },
+      {
+        "text": "amlodipine",
+        "type": "Drug",
+        "start": 57,
+        "end": 67
+      },
+      {
+        "text": "atorvastatin",
+        "type": "Drug",
+        "start": 93,
+        "end": 105
+      }
+    ],
+    "relations": [
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "amlodipine",
+          "type": "Drug",
+          "start": 57,
+          "end": 67
+        },
+        "tail": {
+          "text": "atorvastatin",
+          "type": "Drug",
+          "start": 93,
+          "end": 105
+        },
+        "confidence": 0.91
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "atorvastatin",
+          "type": "Drug",
+          "start": 93,
+          "end": 105
+        },
+        "tail": {
+          "text": "amlodipine",
+          "type": "Drug",
+          "start": 57,
+          "end": 67
+        },
+        "confidence": 0.92
+      }
+    ],
+    "metadata": {
+      "id": 29,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: depression with depression. Additionally, hemoglobin A1c with blood glucose. Patient reports lisinopril administered The patient also has rheumatoid arthritis. Patient reports levothyroxine treatment. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "depression",
+        "type": "Disease",
+        "start": 15,
+        "end": 25
+      },
+      {
+        "text": "depression",
+        "type": "Disease",
+        "start": 31,
+        "end": 41
+      },
+      {
+        "text": "hemoglobin A1c",
+        "type": "Lab_Test",
+        "start": 57,
+        "end": 71
+      },
+      {
+        "text": "blood glucose",
+        "type": "Lab_Test",
+        "start": 77,
+        "end": 90
+      },
+      {
+        "text": "lisinopril",
+        "type": "Drug",
+        "start": 108,
+        "end": 118
+      },
+      {
+        "text": "rheumatoid arthritis",
+        "type": "Disease",
+        "start": 153,
+        "end": 173
+      },
+      {
+        "text": "levothyroxine",
+        "type": "Drug",
+        "start": 191,
+        "end": 204
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "levothyroxine",
+          "type": "Drug",
+          "start": 191,
+          "end": 204
+        },
+        "tail": {
+          "text": "rheumatoid arthritis",
+          "type": "Disease",
+          "start": 153,
+          "end": 173
+        },
+        "confidence": 0.95
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "levothyroxine",
+          "type": "Drug",
+          "start": 191,
+          "end": 204
+        },
+        "tail": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 108,
+          "end": 118
+        },
+        "confidence": 0.95
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "levothyroxine",
+          "type": "Drug",
+          "start": 191,
+          "end": 204
+        },
+        "tail": {
+          "text": "depression",
+          "type": "Disease",
+          "start": 15,
+          "end": 25
+        },
+        "confidence": 0.94
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 108,
+          "end": 118
+        },
+        "tail": {
+          "text": "depression",
+          "type": "Disease",
+          "start": 15,
+          "end": 25
+        },
+        "confidence": 0.89
+      }
+    ],
+    "metadata": {
+      "id": 30,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: blood pressure monitoring with blood glucose The patient also has blood pressure monitoring. Patient reports coronary artery disease. Patient reports migraine. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "blood pressure monitoring",
+        "type": "Procedure",
+        "start": 15,
+        "end": 40
+      },
+      {
+        "text": "blood glucose",
+        "type": "Lab_Test",
+        "start": 46,
+        "end": 59
+      },
+      {
+        "text": "blood pressure monitoring",
+        "type": "Procedure",
+        "start": 81,
+        "end": 106
+      },
+      {
+        "text": "coronary artery disease",
+        "type": "Disease",
+        "start": 124,
+        "end": 147
+      },
+      {
+        "text": "migraine",
+        "type": "Disease",
+        "start": 165,
+        "end": 173
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 31,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: diabetes mellitus. Patient reports cough. Patient reports biopsy with blood pressure monitoring. Additionally, losartan administered. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "diabetes mellitus",
+        "type": "Disease",
+        "start": 24,
+        "end": 41
+      },
+      {
+        "text": "cough",
+        "type": "Symptom",
+        "start": 59,
+        "end": 64
+      },
+      {
+        "text": "biopsy",
+        "type": "Procedure",
+        "start": 82,
+        "end": 88
+      },
+      {
+        "text": "blood pressure monitoring",
+        "type": "Procedure",
+        "start": 94,
+        "end": 119
+      },
+      {
+        "text": "losartan",
+        "type": "Drug",
+        "start": 135,
+        "end": 143
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 135,
+          "end": 143
+        },
+        "tail": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 24,
+          "end": 41
+        },
+        "confidence": 0.9
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 24,
+          "end": 41
+        },
+        "tail": {
+          "text": "cough",
+          "type": "Symptom",
+          "start": 59,
+          "end": 64
+        },
+        "confidence": 0.89
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 24,
+          "end": 41
+        },
+        "tail": {
+          "text": "cough",
+          "type": "Symptom",
+          "start": 59,
+          "end": 64
+        },
+        "confidence": 0.89
+      }
+    ],
+    "metadata": {
+      "id": 32,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 60-year-old patient presents to the clinic. amlodipine administered. Patient reports hypertension The patient also has MRI with albuterol treatment with physical therapy. Patient reports depression The patient also has urinary tract infection. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "amlodipine",
+        "type": "Drug",
+        "start": 46,
+        "end": 56
+      },
+      {
+        "text": "hypertension",
+        "type": "Disease",
+        "start": 87,
+        "end": 99
+      },
+      {
+        "text": "MRI",
+        "type": "Procedure",
+        "start": 121,
+        "end": 124
+      },
+      {
+        "text": "albuterol",
+        "type": "Drug",
+        "start": 130,
+        "end": 139
+      },
+      {
+        "text": "physical therapy",
+        "type": "Procedure",
+        "start": 155,
+        "end": 171
+      },
+      {
+        "text": "depression",
+        "type": "Disease",
+        "start": 189,
+        "end": 199
+      },
+      {
+        "text": "urinary tract infection",
+        "type": "Disease",
+        "start": 221,
+        "end": 244
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "amlodipine",
+          "type": "Drug",
+          "start": 46,
+          "end": 56
+        },
+        "tail": {
+          "text": "hypertension",
+          "type": "Disease",
+          "start": 87,
+          "end": 99
+        },
+        "confidence": 0.87
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 130,
+          "end": 139
+        },
+        "tail": {
+          "text": "depression",
+          "type": "Disease",
+          "start": 189,
+          "end": 199
+        },
+        "confidence": 0.96
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 130,
+          "end": 139
+        },
+        "tail": {
+          "text": "depression",
+          "type": "Disease",
+          "start": 189,
+          "end": 199
+        },
+        "confidence": 0.9
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 130,
+          "end": 139
+        },
+        "tail": {
+          "text": "depression",
+          "type": "Disease",
+          "start": 189,
+          "end": 199
+        },
+        "confidence": 0.97
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 130,
+          "end": 139
+        },
+        "tail": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 221,
+          "end": 244
+        },
+        "confidence": 0.96
+      }
+    ],
+    "metadata": {
+      "id": 33,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 55-year-old patient presents to the clinic. creatinine. Additionally, liver function tests. Patient reports X-ray. Patient reports physical therapy. Additionally, cough. Patient reports liver function tests. Patient reports liver function tests. Additionally, losartan treatment. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "creatinine",
+        "type": "Lab_Test",
+        "start": 46,
+        "end": 56
+      },
+      {
+        "text": "liver function tests",
+        "type": "Lab_Test",
+        "start": 72,
+        "end": 92
+      },
+      {
+        "text": "X-ray",
+        "type": "Procedure",
+        "start": 110,
+        "end": 115
+      },
+      {
+        "text": "physical therapy",
+        "type": "Procedure",
+        "start": 133,
+        "end": 149
+      },
+      {
+        "text": "cough",
+        "type": "Symptom",
+        "start": 165,
+        "end": 170
+      },
+      {
+        "text": "liver function tests",
+        "type": "Lab_Test",
+        "start": 188,
+        "end": 208
+      },
+      {
+        "text": "liver function tests",
+        "type": "Lab_Test",
+        "start": 226,
+        "end": 246
+      },
+      {
+        "text": "losartan",
+        "type": "Drug",
+        "start": 262,
+        "end": 270
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 34,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: complete blood count with dizziness. Additionally, chest pain. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "complete blood count",
+        "type": "Lab_Test",
+        "start": 24,
+        "end": 44
+      },
+      {
+        "text": "dizziness",
+        "type": "Symptom",
+        "start": 50,
+        "end": 59
+      },
+      {
+        "text": "chest pain",
+        "type": "Symptom",
+        "start": 75,
+        "end": 85
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 35,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 69-year-old patient presents to the clinic. cough The patient also has albuterol treatment The patient also has losartan administered. Patient reports complete blood count. Additionally, albuterol administered. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "cough",
+        "type": "Symptom",
+        "start": 46,
+        "end": 51
+      },
+      {
+        "text": "albuterol",
+        "type": "Drug",
+        "start": 73,
+        "end": 82
+      },
+      {
+        "text": "losartan",
+        "type": "Drug",
+        "start": 114,
+        "end": 122
+      },
+      {
+        "text": "complete blood count",
+        "type": "Lab_Test",
+        "start": 153,
+        "end": 173
+      },
+      {
+        "text": "albuterol",
+        "type": "Drug",
+        "start": 189,
+        "end": 198
+      }
+    ],
+    "relations": [
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 189,
+          "end": 198
+        },
+        "tail": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 114,
+          "end": 122
+        },
+        "confidence": 0.95
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 189,
+          "end": 198
+        },
+        "tail": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 73,
+          "end": 82
+        },
+        "confidence": 0.88
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 73,
+          "end": 82
+        },
+        "tail": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 189,
+          "end": 198
+        },
+        "confidence": 0.87
+      }
+    ],
+    "metadata": {
+      "id": 36,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: X-ray. Additionally, X-ray. Additionally, headache. Additionally, lipid panel. Patient reports urinalysis with liver function tests The patient also has urinary tract infection. Additionally, diabetes mellitus. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "X-ray",
+        "type": "Procedure",
+        "start": 15,
+        "end": 20
+      },
+      {
+        "text": "X-ray",
+        "type": "Procedure",
+        "start": 36,
+        "end": 41
+      },
+      {
+        "text": "headache",
+        "type": "Symptom",
+        "start": 57,
+        "end": 65
+      },
+      {
+        "text": "lipid panel",
+        "type": "Lab_Test",
+        "start": 81,
+        "end": 92
+      },
+      {
+        "text": "urinalysis",
+        "type": "Lab_Test",
+        "start": 110,
+        "end": 120
+      },
+      {
+        "text": "liver function tests",
+        "type": "Lab_Test",
+        "start": 126,
+        "end": 146
+      },
+      {
+        "text": "urinary tract infection",
+        "type": "Disease",
+        "start": 168,
+        "end": 191
+      },
+      {
+        "text": "diabetes mellitus",
+        "type": "Disease",
+        "start": 207,
+        "end": 224
+      }
+    ],
+    "relations": [
+      {
+        "type": "causes",
+        "head": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 168,
+          "end": 191
+        },
+        "tail": {
+          "text": "headache",
+          "type": "Symptom",
+          "start": 57,
+          "end": 65
+        },
+        "confidence": 0.96
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "headache",
+          "type": "Symptom",
+          "start": 57,
+          "end": 65
+        },
+        "tail": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 207,
+          "end": 224
+        },
+        "confidence": 0.87
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 168,
+          "end": 191
+        },
+        "tail": {
+          "text": "headache",
+          "type": "Symptom",
+          "start": 57,
+          "end": 65
+        },
+        "confidence": 1.0
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "headache",
+          "type": "Symptom",
+          "start": 57,
+          "end": 65
+        },
+        "tail": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 168,
+          "end": 191
+        },
+        "confidence": 0.98
+      }
+    ],
+    "metadata": {
+      "id": 37,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 73-year-old patient presents to the clinic. thyroid function tests. Patient reports hemoglobin A1c with chest pain. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "thyroid function tests",
+        "type": "Lab_Test",
+        "start": 46,
+        "end": 68
+      },
+      {
+        "text": "hemoglobin A1c",
+        "type": "Lab_Test",
+        "start": 86,
+        "end": 100
+      },
+      {
+        "text": "chest pain",
+        "type": "Symptom",
+        "start": 106,
+        "end": 116
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 38,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: glucose monitoring The patient also has metformin administered with troponin. Patient reports dizziness. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "glucose monitoring",
+        "type": "Procedure",
+        "start": 24,
+        "end": 42
+      },
+      {
+        "text": "metformin",
+        "type": "Drug",
+        "start": 64,
+        "end": 73
+      },
+      {
+        "text": "troponin",
+        "type": "Lab_Test",
+        "start": 92,
+        "end": 100
+      },
+      {
+        "text": "dizziness",
+        "type": "Symptom",
+        "start": 118,
+        "end": 127
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 39,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: migraine with joint pain with dizziness. Patient reports abdominal pain. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "migraine",
+        "type": "Disease",
+        "start": 24,
+        "end": 32
+      },
+      {
+        "text": "joint pain",
+        "type": "Symptom",
+        "start": 38,
+        "end": 48
+      },
+      {
+        "text": "dizziness",
+        "type": "Symptom",
+        "start": 54,
+        "end": 63
+      },
+      {
+        "text": "abdominal pain",
+        "type": "Symptom",
+        "start": 81,
+        "end": 95
+      }
+    ],
+    "relations": [
+      {
+        "type": "causes",
+        "head": {
+          "text": "migraine",
+          "type": "Disease",
+          "start": 24,
+          "end": 32
+        },
+        "tail": {
+          "text": "abdominal pain",
+          "type": "Symptom",
+          "start": 81,
+          "end": 95
+        },
+        "confidence": 0.92
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "dizziness",
+          "type": "Symptom",
+          "start": 54,
+          "end": 63
+        },
+        "tail": {
+          "text": "migraine",
+          "type": "Disease",
+          "start": 24,
+          "end": 32
+        },
+        "confidence": 0.91
+      }
+    ],
+    "metadata": {
+      "id": 40,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 46-year-old patient presents to the clinic. creatinine with chest pain. Additionally, amlodipine administered. Patient reports troponin. Patient reports glucose monitoring with headache. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "creatinine",
+        "type": "Lab_Test",
+        "start": 46,
+        "end": 56
+      },
+      {
+        "text": "chest pain",
+        "type": "Symptom",
+        "start": 62,
+        "end": 72
+      },
+      {
+        "text": "amlodipine",
+        "type": "Drug",
+        "start": 88,
+        "end": 98
+      },
+      {
+        "text": "troponin",
+        "type": "Lab_Test",
+        "start": 129,
+        "end": 137
+      },
+      {
+        "text": "glucose monitoring",
+        "type": "Procedure",
+        "start": 155,
+        "end": 173
+      },
+      {
+        "text": "headache",
+        "type": "Symptom",
+        "start": 179,
+        "end": 187
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 41,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 31-year-old patient presents to the clinic. blood glucose. Additionally, pneumonia. Additionally, MRI. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "blood glucose",
+        "type": "Lab_Test",
+        "start": 46,
+        "end": 59
+      },
+      {
+        "text": "pneumonia",
+        "type": "Disease",
+        "start": 75,
+        "end": 84
+      },
+      {
+        "text": "MRI",
+        "type": "Procedure",
+        "start": 100,
+        "end": 103
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 42,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: troponin. Additionally, coronary artery disease with metformin was prescribed. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "troponin",
+        "type": "Lab_Test",
+        "start": 15,
+        "end": 23
+      },
+      {
+        "text": "coronary artery disease",
+        "type": "Disease",
+        "start": 39,
+        "end": 62
+      },
+      {
+        "text": "metformin",
+        "type": "Drug",
+        "start": 68,
+        "end": 77
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "metformin",
+          "type": "Drug",
+          "start": 68,
+          "end": 77
+        },
+        "tail": {
+          "text": "coronary artery disease",
+          "type": "Disease",
+          "start": 39,
+          "end": 62
+        },
+        "confidence": 0.95
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "metformin",
+          "type": "Drug",
+          "start": 68,
+          "end": 77
+        },
+        "tail": {
+          "text": "coronary artery disease",
+          "type": "Disease",
+          "start": 39,
+          "end": 62
+        },
+        "confidence": 0.91
+      }
+    ],
+    "metadata": {
+      "id": 43,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: pneumonia with metformin was prescribed. Patient reports depression with shortness of breath with losartan was prescribed with troponin The patient also has physical therapy. Patient reports asthma. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "pneumonia",
+        "type": "Disease",
+        "start": 24,
+        "end": 33
+      },
+      {
+        "text": "metformin",
+        "type": "Drug",
+        "start": 39,
+        "end": 48
+      },
+      {
+        "text": "depression",
+        "type": "Disease",
+        "start": 81,
+        "end": 91
+      },
+      {
+        "text": "shortness of breath",
+        "type": "Symptom",
+        "start": 97,
+        "end": 116
+      },
+      {
+        "text": "losartan",
+        "type": "Drug",
+        "start": 122,
+        "end": 130
+      },
+      {
+        "text": "troponin",
+        "type": "Lab_Test",
+        "start": 151,
+        "end": 159
+      },
+      {
+        "text": "physical therapy",
+        "type": "Procedure",
+        "start": 181,
+        "end": 197
+      },
+      {
+        "text": "asthma",
+        "type": "Disease",
+        "start": 215,
+        "end": 221
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "metformin",
+          "type": "Drug",
+          "start": 39,
+          "end": 48
+        },
+        "tail": {
+          "text": "pneumonia",
+          "type": "Disease",
+          "start": 24,
+          "end": 33
+        },
+        "confidence": 0.89
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "metformin",
+          "type": "Drug",
+          "start": 39,
+          "end": 48
+        },
+        "tail": {
+          "text": "pneumonia",
+          "type": "Disease",
+          "start": 24,
+          "end": 33
+        },
+        "confidence": 0.99
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 122,
+          "end": 130
+        },
+        "tail": {
+          "text": "pneumonia",
+          "type": "Disease",
+          "start": 24,
+          "end": 33
+        },
+        "confidence": 0.87
+      }
+    ],
+    "metadata": {
+      "id": 44,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: X-ray The patient also has C-reactive protein. Patient reports CT scan with hypertension. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "X-ray",
+        "type": "Procedure",
+        "start": 15,
+        "end": 20
+      },
+      {
+        "text": "C-reactive protein",
+        "type": "Lab_Test",
+        "start": 42,
+        "end": 60
+      },
+      {
+        "text": "CT scan",
+        "type": "Procedure",
+        "start": 78,
+        "end": 85
+      },
+      {
+        "text": "hypertension",
+        "type": "Disease",
+        "start": 91,
+        "end": 103
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 45,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 59-year-old patient presents to the clinic. glucose monitoring The patient also has physical therapy with urinary tract infection. Additionally, joint pain. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "glucose monitoring",
+        "type": "Procedure",
+        "start": 46,
+        "end": 64
+      },
+      {
+        "text": "physical therapy",
+        "type": "Procedure",
+        "start": 86,
+        "end": 102
+      },
+      {
+        "text": "urinary tract infection",
+        "type": "Disease",
+        "start": 108,
+        "end": 131
+      },
+      {
+        "text": "joint pain",
+        "type": "Symptom",
+        "start": 147,
+        "end": 157
+      }
+    ],
+    "relations": [
+      {
+        "type": "causes",
+        "head": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 108,
+          "end": 131
+        },
+        "tail": {
+          "text": "joint pain",
+          "type": "Symptom",
+          "start": 147,
+          "end": 157
+        },
+        "confidence": 0.87
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "joint pain",
+          "type": "Symptom",
+          "start": 147,
+          "end": 157
+        },
+        "tail": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 108,
+          "end": 131
+        },
+        "confidence": 0.91
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "joint pain",
+          "type": "Symptom",
+          "start": 147,
+          "end": 157
+        },
+        "tail": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 108,
+          "end": 131
+        },
+        "confidence": 0.86
+      }
+    ],
+    "metadata": {
+      "id": 46,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: troponin with hypertension. Patient reports nausea with joint pain The patient also has urinary tract infection. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "troponin",
+        "type": "Lab_Test",
+        "start": 15,
+        "end": 23
+      },
+      {
+        "text": "hypertension",
+        "type": "Disease",
+        "start": 29,
+        "end": 41
+      },
+      {
+        "text": "nausea",
+        "type": "Symptom",
+        "start": 59,
+        "end": 65
+      },
+      {
+        "text": "joint pain",
+        "type": "Symptom",
+        "start": 71,
+        "end": 81
+      },
+      {
+        "text": "urinary tract infection",
+        "type": "Disease",
+        "start": 103,
+        "end": 126
+      }
+    ],
+    "relations": [
+      {
+        "type": "indicates",
+        "head": {
+          "text": "nausea",
+          "type": "Symptom",
+          "start": 59,
+          "end": 65
+        },
+        "tail": {
+          "text": "hypertension",
+          "type": "Disease",
+          "start": 29,
+          "end": 41
+        },
+        "confidence": 0.93
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "joint pain",
+          "type": "Symptom",
+          "start": 71,
+          "end": 81
+        },
+        "tail": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 103,
+          "end": 126
+        },
+        "confidence": 0.97
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "nausea",
+          "type": "Symptom",
+          "start": 59,
+          "end": 65
+        },
+        "tail": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 103,
+          "end": 126
+        },
+        "confidence": 0.99
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "hypertension",
+          "type": "Disease",
+          "start": 29,
+          "end": 41
+        },
+        "tail": {
+          "text": "joint pain",
+          "type": "Symptom",
+          "start": 71,
+          "end": 81
+        },
+        "confidence": 0.9
+      }
+    ],
+    "metadata": {
+      "id": 47,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: urinalysis The patient also has omeprazole treatment. Additionally, migraine. Additionally, physical therapy. Additionally, asthma. Additionally, hypertension. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "urinalysis",
+        "type": "Lab_Test",
+        "start": 24,
+        "end": 34
+      },
+      {
+        "text": "omeprazole",
+        "type": "Drug",
+        "start": 56,
+        "end": 66
+      },
+      {
+        "text": "migraine",
+        "type": "Disease",
+        "start": 92,
+        "end": 100
+      },
+      {
+        "text": "physical therapy",
+        "type": "Procedure",
+        "start": 116,
+        "end": 132
+      },
+      {
+        "text": "asthma",
+        "type": "Disease",
+        "start": 148,
+        "end": 154
+      },
+      {
+        "text": "hypertension",
+        "type": "Disease",
+        "start": 170,
+        "end": 182
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "omeprazole",
+          "type": "Drug",
+          "start": 56,
+          "end": 66
+        },
+        "tail": {
+          "text": "asthma",
+          "type": "Disease",
+          "start": 148,
+          "end": 154
+        },
+        "confidence": 0.94
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "omeprazole",
+          "type": "Drug",
+          "start": 56,
+          "end": 66
+        },
+        "tail": {
+          "text": "asthma",
+          "type": "Disease",
+          "start": 148,
+          "end": 154
+        },
+        "confidence": 0.91
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "omeprazole",
+          "type": "Drug",
+          "start": 56,
+          "end": 66
+        },
+        "tail": {
+          "text": "asthma",
+          "type": "Disease",
+          "start": 148,
+          "end": 154
+        },
+        "confidence": 0.94
+      }
+    ],
+    "metadata": {
+      "id": 48,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: headache with lisinopril treatment. Patient reports lipid panel with hemoglobin A1c with albuterol treatment The patient also has cough. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "headache",
+        "type": "Symptom",
+        "start": 24,
+        "end": 32
+      },
+      {
+        "text": "lisinopril",
+        "type": "Drug",
+        "start": 38,
+        "end": 48
+      },
+      {
+        "text": "lipid panel",
+        "type": "Lab_Test",
+        "start": 76,
+        "end": 87
+      },
+      {
+        "text": "hemoglobin A1c",
+        "type": "Lab_Test",
+        "start": 93,
+        "end": 107
+      },
+      {
+        "text": "albuterol",
+        "type": "Drug",
+        "start": 113,
+        "end": 122
+      },
+      {
+        "text": "cough",
+        "type": "Symptom",
+        "start": 154,
+        "end": 159
+      }
+    ],
+    "relations": [
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 38,
+          "end": 48
+        },
+        "tail": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 113,
+          "end": 122
+        },
+        "confidence": 0.95
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 113,
+          "end": 122
+        },
+        "tail": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 38,
+          "end": 48
+        },
+        "confidence": 0.92
+      }
+    ],
+    "metadata": {
+      "id": 49,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: omeprazole treatment with complete blood count with metformin treatment with MRI. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "omeprazole",
+        "type": "Drug",
+        "start": 24,
+        "end": 34
+      },
+      {
+        "text": "complete blood count",
+        "type": "Lab_Test",
+        "start": 50,
+        "end": 70
+      },
+      {
+        "text": "metformin",
+        "type": "Drug",
+        "start": 76,
+        "end": 85
+      },
+      {
+        "text": "MRI",
+        "type": "Procedure",
+        "start": 101,
+        "end": 104
+      }
+    ],
+    "relations": [
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "metformin",
+          "type": "Drug",
+          "start": 76,
+          "end": 85
+        },
+        "tail": {
+          "text": "omeprazole",
+          "type": "Drug",
+          "start": 24,
+          "end": 34
+        },
+        "confidence": 0.89
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "metformin",
+          "type": "Drug",
+          "start": 76,
+          "end": 85
+        },
+        "tail": {
+          "text": "omeprazole",
+          "type": "Drug",
+          "start": 24,
+          "end": 34
+        },
+        "confidence": 0.97
+      }
+    ],
+    "metadata": {
+      "id": 50,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: C-reactive protein. Additionally, urinary tract infection. Patient reports asthma The patient also has liver function tests with complete blood count. Patient reports X-ray. Patient reports dizziness. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "C-reactive protein",
+        "type": "Lab_Test",
+        "start": 15,
+        "end": 33
+      },
+      {
+        "text": "urinary tract infection",
+        "type": "Disease",
+        "start": 49,
+        "end": 72
+      },
+      {
+        "text": "asthma",
+        "type": "Disease",
+        "start": 90,
+        "end": 96
+      },
+      {
+        "text": "liver function tests",
+        "type": "Lab_Test",
+        "start": 118,
+        "end": 138
+      },
+      {
+        "text": "complete blood count",
+        "type": "Lab_Test",
+        "start": 144,
+        "end": 164
+      },
+      {
+        "text": "X-ray",
+        "type": "Procedure",
+        "start": 182,
+        "end": 187
+      },
+      {
+        "text": "dizziness",
+        "type": "Symptom",
+        "start": 205,
+        "end": 214
+      }
+    ],
+    "relations": [
+      {
+        "type": "indicates",
+        "head": {
+          "text": "dizziness",
+          "type": "Symptom",
+          "start": 205,
+          "end": 214
+        },
+        "tail": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 49,
+          "end": 72
+        },
+        "confidence": 0.88
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "dizziness",
+          "type": "Symptom",
+          "start": 205,
+          "end": 214
+        },
+        "tail": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 49,
+          "end": 72
+        },
+        "confidence": 0.97
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 49,
+          "end": 72
+        },
+        "tail": {
+          "text": "dizziness",
+          "type": "Symptom",
+          "start": 205,
+          "end": 214
+        },
+        "confidence": 0.98
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "dizziness",
+          "type": "Symptom",
+          "start": 205,
+          "end": 214
+        },
+        "tail": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 49,
+          "end": 72
+        },
+        "confidence": 0.96
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "asthma",
+          "type": "Disease",
+          "start": 90,
+          "end": 96
+        },
+        "tail": {
+          "text": "dizziness",
+          "type": "Symptom",
+          "start": 205,
+          "end": 214
+        },
+        "confidence": 0.91
+      }
+    ],
+    "metadata": {
+      "id": 51,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: depression. Patient reports blood glucose The patient also has omeprazole treatment with physical therapy. Additionally, complete blood count with migraine. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "depression",
+        "type": "Disease",
+        "start": 15,
+        "end": 25
+      },
+      {
+        "text": "blood glucose",
+        "type": "Lab_Test",
+        "start": 43,
+        "end": 56
+      },
+      {
+        "text": "omeprazole",
+        "type": "Drug",
+        "start": 78,
+        "end": 88
+      },
+      {
+        "text": "physical therapy",
+        "type": "Procedure",
+        "start": 104,
+        "end": 120
+      },
+      {
+        "text": "complete blood count",
+        "type": "Lab_Test",
+        "start": 136,
+        "end": 156
+      },
+      {
+        "text": "migraine",
+        "type": "Disease",
+        "start": 162,
+        "end": 170
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "omeprazole",
+          "type": "Drug",
+          "start": 78,
+          "end": 88
+        },
+        "tail": {
+          "text": "depression",
+          "type": "Disease",
+          "start": 15,
+          "end": 25
+        },
+        "confidence": 0.91
+      }
+    ],
+    "metadata": {
+      "id": 52,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 77-year-old patient presents to the clinic. dizziness with hypertension. Additionally, chronic kidney disease with CT scan The patient also has joint pain. Additionally, abdominal pain with coronary angiography The patient also has rheumatoid arthritis. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "dizziness",
+        "type": "Symptom",
+        "start": 46,
+        "end": 55
+      },
+      {
+        "text": "hypertension",
+        "type": "Disease",
+        "start": 61,
+        "end": 73
+      },
+      {
+        "text": "chronic kidney disease",
+        "type": "Disease",
+        "start": 89,
+        "end": 111
+      },
+      {
+        "text": "CT scan",
+        "type": "Procedure",
+        "start": 117,
+        "end": 124
+      },
+      {
+        "text": "joint pain",
+        "type": "Symptom",
+        "start": 146,
+        "end": 156
+      },
+      {
+        "text": "abdominal pain",
+        "type": "Symptom",
+        "start": 172,
+        "end": 186
+      },
+      {
+        "text": "coronary angiography",
+        "type": "Procedure",
+        "start": 192,
+        "end": 212
+      },
+      {
+        "text": "rheumatoid arthritis",
+        "type": "Disease",
+        "start": 234,
+        "end": 254
+      }
+    ],
+    "relations": [
+      {
+        "type": "causes",
+        "head": {
+          "text": "hypertension",
+          "type": "Disease",
+          "start": 61,
+          "end": 73
+        },
+        "tail": {
+          "text": "dizziness",
+          "type": "Symptom",
+          "start": 46,
+          "end": 55
+        },
+        "confidence": 0.9
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "joint pain",
+          "type": "Symptom",
+          "start": 146,
+          "end": 156
+        },
+        "tail": {
+          "text": "hypertension",
+          "type": "Disease",
+          "start": 61,
+          "end": 73
+        },
+        "confidence": 0.91
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "chronic kidney disease",
+          "type": "Disease",
+          "start": 89,
+          "end": 111
+        },
+        "tail": {
+          "text": "dizziness",
+          "type": "Symptom",
+          "start": 46,
+          "end": 55
+        },
+        "confidence": 0.93
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "chronic kidney disease",
+          "type": "Disease",
+          "start": 89,
+          "end": 111
+        },
+        "tail": {
+          "text": "joint pain",
+          "type": "Symptom",
+          "start": 146,
+          "end": 156
+        },
+        "confidence": 0.9
+      }
+    ],
+    "metadata": {
+      "id": 53,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: ultrasound with blood pressure monitoring. Patient reports hypertension with shortness of breath. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "ultrasound",
+        "type": "Procedure",
+        "start": 15,
+        "end": 25
+      },
+      {
+        "text": "blood pressure monitoring",
+        "type": "Procedure",
+        "start": 31,
+        "end": 56
+      },
+      {
+        "text": "hypertension",
+        "type": "Disease",
+        "start": 74,
+        "end": 86
+      },
+      {
+        "text": "shortness of breath",
+        "type": "Symptom",
+        "start": 92,
+        "end": 111
+      }
+    ],
+    "relations": [
+      {
+        "type": "causes",
+        "head": {
+          "text": "hypertension",
+          "type": "Disease",
+          "start": 74,
+          "end": 86
+        },
+        "tail": {
+          "text": "shortness of breath",
+          "type": "Symptom",
+          "start": 92,
+          "end": 111
+        },
+        "confidence": 0.85
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "shortness of breath",
+          "type": "Symptom",
+          "start": 92,
+          "end": 111
+        },
+        "tail": {
+          "text": "hypertension",
+          "type": "Disease",
+          "start": 74,
+          "end": 86
+        },
+        "confidence": 0.94
+      }
+    ],
+    "metadata": {
+      "id": 54,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: albuterol was prescribed The patient also has dizziness The patient also has thyroid function tests with amlodipine treatment. Patient reports cough with diabetes mellitus with lipid panel. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "albuterol",
+        "type": "Drug",
+        "start": 24,
+        "end": 33
+      },
+      {
+        "text": "dizziness",
+        "type": "Symptom",
+        "start": 70,
+        "end": 79
+      },
+      {
+        "text": "thyroid function tests",
+        "type": "Lab_Test",
+        "start": 101,
+        "end": 123
+      },
+      {
+        "text": "amlodipine",
+        "type": "Drug",
+        "start": 129,
+        "end": 139
+      },
+      {
+        "text": "cough",
+        "type": "Symptom",
+        "start": 167,
+        "end": 172
+      },
+      {
+        "text": "diabetes mellitus",
+        "type": "Disease",
+        "start": 178,
+        "end": 195
+      },
+      {
+        "text": "lipid panel",
+        "type": "Lab_Test",
+        "start": 201,
+        "end": 212
+      }
+    ],
+    "relations": [
+      {
+        "type": "indicates",
+        "head": {
+          "text": "cough",
+          "type": "Symptom",
+          "start": 167,
+          "end": 172
+        },
+        "tail": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 178,
+          "end": 195
+        },
+        "confidence": 0.94
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "amlodipine",
+          "type": "Drug",
+          "start": 129,
+          "end": 139
+        },
+        "tail": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 178,
+          "end": 195
+        },
+        "confidence": 0.95
+      }
+    ],
+    "metadata": {
+      "id": 55,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 70-year-old patient presents to the clinic. metoprolol treatment The patient also has chest pain. Additionally, shortness of breath with CT scan. Patient reports ultrasound. Patient reports complete blood count. Additionally, atorvastatin administered. Additionally, diabetes mellitus. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "metoprolol",
+        "type": "Drug",
+        "start": 46,
+        "end": 56
+      },
+      {
+        "text": "chest pain",
+        "type": "Symptom",
+        "start": 88,
+        "end": 98
+      },
+      {
+        "text": "shortness of breath",
+        "type": "Symptom",
+        "start": 114,
+        "end": 133
+      },
+      {
+        "text": "CT scan",
+        "type": "Procedure",
+        "start": 139,
+        "end": 146
+      },
+      {
+        "text": "ultrasound",
+        "type": "Procedure",
+        "start": 164,
+        "end": 174
+      },
+      {
+        "text": "complete blood count",
+        "type": "Lab_Test",
+        "start": 192,
+        "end": 212
+      },
+      {
+        "text": "atorvastatin",
+        "type": "Drug",
+        "start": 228,
+        "end": 240
+      },
+      {
+        "text": "diabetes mellitus",
+        "type": "Disease",
+        "start": 269,
+        "end": 286
+      }
+    ],
+    "relations": [
+      {
+        "type": "indicates",
+        "head": {
+          "text": "chest pain",
+          "type": "Symptom",
+          "start": 88,
+          "end": 98
+        },
+        "tail": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 269,
+          "end": 286
+        },
+        "confidence": 0.98
+      }
+    ],
+    "metadata": {
+      "id": 56,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: physical therapy The patient also has lisinopril administered The patient also has liver function tests with pneumonia. Patient reports coronary artery disease. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "physical therapy",
+        "type": "Procedure",
+        "start": 15,
+        "end": 31
+      },
+      {
+        "text": "lisinopril",
+        "type": "Drug",
+        "start": 53,
+        "end": 63
+      },
+      {
+        "text": "liver function tests",
+        "type": "Lab_Test",
+        "start": 98,
+        "end": 118
+      },
+      {
+        "text": "pneumonia",
+        "type": "Disease",
+        "start": 124,
+        "end": 133
+      },
+      {
+        "text": "coronary artery disease",
+        "type": "Disease",
+        "start": 151,
+        "end": 174
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 53,
+          "end": 63
+        },
+        "tail": {
+          "text": "pneumonia",
+          "type": "Disease",
+          "start": 124,
+          "end": 133
+        },
+        "confidence": 0.93
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 53,
+          "end": 63
+        },
+        "tail": {
+          "text": "pneumonia",
+          "type": "Disease",
+          "start": 124,
+          "end": 133
+        },
+        "confidence": 0.95
+      }
+    ],
+    "metadata": {
+      "id": 57,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: metformin administered. Patient reports glucose monitoring with chronic kidney disease The patient also has creatinine The patient also has biopsy. Additionally, coronary artery disease with lisinopril was prescribed The patient also has chronic kidney disease. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "metformin",
+        "type": "Drug",
+        "start": 15,
+        "end": 24
+      },
+      {
+        "text": "glucose monitoring",
+        "type": "Procedure",
+        "start": 55,
+        "end": 73
+      },
+      {
+        "text": "chronic kidney disease",
+        "type": "Disease",
+        "start": 79,
+        "end": 101
+      },
+      {
+        "text": "creatinine",
+        "type": "Lab_Test",
+        "start": 123,
+        "end": 133
+      },
+      {
+        "text": "biopsy",
+        "type": "Procedure",
+        "start": 155,
+        "end": 161
+      },
+      {
+        "text": "coronary artery disease",
+        "type": "Disease",
+        "start": 177,
+        "end": 200
+      },
+      {
+        "text": "lisinopril",
+        "type": "Drug",
+        "start": 206,
+        "end": 216
+      },
+      {
+        "text": "chronic kidney disease",
+        "type": "Disease",
+        "start": 253,
+        "end": 275
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 206,
+          "end": 216
+        },
+        "tail": {
+          "text": "coronary artery disease",
+          "type": "Disease",
+          "start": 177,
+          "end": 200
+        },
+        "confidence": 0.99
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 206,
+          "end": 216
+        },
+        "tail": {
+          "text": "coronary artery disease",
+          "type": "Disease",
+          "start": 177,
+          "end": 200
+        },
+        "confidence": 0.97
+      }
+    ],
+    "metadata": {
+      "id": 58,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: glucose monitoring with shortness of breath. Patient reports fever with lipid panel The patient also has shortness of breath. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "glucose monitoring",
+        "type": "Procedure",
+        "start": 24,
+        "end": 42
+      },
+      {
+        "text": "shortness of breath",
+        "type": "Symptom",
+        "start": 48,
+        "end": 67
+      },
+      {
+        "text": "fever",
+        "type": "Symptom",
+        "start": 85,
+        "end": 90
+      },
+      {
+        "text": "lipid panel",
+        "type": "Lab_Test",
+        "start": 96,
+        "end": 107
+      },
+      {
+        "text": "shortness of breath",
+        "type": "Symptom",
+        "start": 129,
+        "end": 148
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 59,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: nausea The patient also has fever The patient also has levothyroxine administered with MRI. Additionally, urinary tract infection with troponin. Additionally, fatigue. Additionally, endoscopy. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "nausea",
+        "type": "Symptom",
+        "start": 24,
+        "end": 30
+      },
+      {
+        "text": "fever",
+        "type": "Symptom",
+        "start": 52,
+        "end": 57
+      },
+      {
+        "text": "levothyroxine",
+        "type": "Drug",
+        "start": 79,
+        "end": 92
+      },
+      {
+        "text": "MRI",
+        "type": "Procedure",
+        "start": 111,
+        "end": 114
+      },
+      {
+        "text": "urinary tract infection",
+        "type": "Disease",
+        "start": 130,
+        "end": 153
+      },
+      {
+        "text": "troponin",
+        "type": "Lab_Test",
+        "start": 159,
+        "end": 167
+      },
+      {
+        "text": "fatigue",
+        "type": "Symptom",
+        "start": 183,
+        "end": 190
+      },
+      {
+        "text": "endoscopy",
+        "type": "Procedure",
+        "start": 206,
+        "end": 215
+      }
+    ],
+    "relations": [
+      {
+        "type": "indicates",
+        "head": {
+          "text": "nausea",
+          "type": "Symptom",
+          "start": 24,
+          "end": 30
+        },
+        "tail": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 130,
+          "end": 153
+        },
+        "confidence": 0.97
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 130,
+          "end": 153
+        },
+        "tail": {
+          "text": "fever",
+          "type": "Symptom",
+          "start": 52,
+          "end": 57
+        },
+        "confidence": 0.85
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 130,
+          "end": 153
+        },
+        "tail": {
+          "text": "nausea",
+          "type": "Symptom",
+          "start": 24,
+          "end": 30
+        },
+        "confidence": 0.97
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 130,
+          "end": 153
+        },
+        "tail": {
+          "text": "fever",
+          "type": "Symptom",
+          "start": 52,
+          "end": 57
+        },
+        "confidence": 0.92
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "fatigue",
+          "type": "Symptom",
+          "start": 183,
+          "end": 190
+        },
+        "tail": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 130,
+          "end": 153
+        },
+        "confidence": 0.87
+      }
+    ],
+    "metadata": {
+      "id": 60,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: fever. Additionally, biopsy with atorvastatin administered. Patient reports troponin. Additionally, aspirin was prescribed. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "fever",
+        "type": "Symptom",
+        "start": 15,
+        "end": 20
+      },
+      {
+        "text": "biopsy",
+        "type": "Procedure",
+        "start": 36,
+        "end": 42
+      },
+      {
+        "text": "atorvastatin",
+        "type": "Drug",
+        "start": 48,
+        "end": 60
+      },
+      {
+        "text": "troponin",
+        "type": "Lab_Test",
+        "start": 91,
+        "end": 99
+      },
+      {
+        "text": "aspirin",
+        "type": "Drug",
+        "start": 115,
+        "end": 122
+      }
+    ],
+    "relations": [
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "atorvastatin",
+          "type": "Drug",
+          "start": 48,
+          "end": 60
+        },
+        "tail": {
+          "text": "aspirin",
+          "type": "Drug",
+          "start": 115,
+          "end": 122
+        },
+        "confidence": 0.87
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "atorvastatin",
+          "type": "Drug",
+          "start": 48,
+          "end": 60
+        },
+        "tail": {
+          "text": "aspirin",
+          "type": "Drug",
+          "start": 115,
+          "end": 122
+        },
+        "confidence": 0.96
+      }
+    ],
+    "metadata": {
+      "id": 61,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: thyroid function tests. Patient reports chest pain. Additionally, rheumatoid arthritis The patient also has headache The patient also has X-ray with blood glucose. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "thyroid function tests",
+        "type": "Lab_Test",
+        "start": 24,
+        "end": 46
+      },
+      {
+        "text": "chest pain",
+        "type": "Symptom",
+        "start": 64,
+        "end": 74
+      },
+      {
+        "text": "rheumatoid arthritis",
+        "type": "Disease",
+        "start": 90,
+        "end": 110
+      },
+      {
+        "text": "headache",
+        "type": "Symptom",
+        "start": 132,
+        "end": 140
+      },
+      {
+        "text": "X-ray",
+        "type": "Procedure",
+        "start": 162,
+        "end": 167
+      },
+      {
+        "text": "blood glucose",
+        "type": "Lab_Test",
+        "start": 173,
+        "end": 186
+      }
+    ],
+    "relations": [
+      {
+        "type": "indicates",
+        "head": {
+          "text": "chest pain",
+          "type": "Symptom",
+          "start": 64,
+          "end": 74
+        },
+        "tail": {
+          "text": "rheumatoid arthritis",
+          "type": "Disease",
+          "start": 90,
+          "end": 110
+        },
+        "confidence": 0.95
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "headache",
+          "type": "Symptom",
+          "start": 132,
+          "end": 140
+        },
+        "tail": {
+          "text": "rheumatoid arthritis",
+          "type": "Disease",
+          "start": 90,
+          "end": 110
+        },
+        "confidence": 0.86
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "headache",
+          "type": "Symptom",
+          "start": 132,
+          "end": 140
+        },
+        "tail": {
+          "text": "rheumatoid arthritis",
+          "type": "Disease",
+          "start": 90,
+          "end": 110
+        },
+        "confidence": 0.88
+      }
+    ],
+    "metadata": {
+      "id": 62,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 28-year-old patient presents to the clinic. biopsy The patient also has aspirin was prescribed. Patient reports losartan treatment. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "biopsy",
+        "type": "Procedure",
+        "start": 46,
+        "end": 52
+      },
+      {
+        "text": "aspirin",
+        "type": "Drug",
+        "start": 74,
+        "end": 81
+      },
+      {
+        "text": "losartan",
+        "type": "Drug",
+        "start": 114,
+        "end": 122
+      }
+    ],
+    "relations": [
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "aspirin",
+          "type": "Drug",
+          "start": 74,
+          "end": 81
+        },
+        "tail": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 114,
+          "end": 122
+        },
+        "confidence": 0.99
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 114,
+          "end": 122
+        },
+        "tail": {
+          "text": "aspirin",
+          "type": "Drug",
+          "start": 74,
+          "end": 81
+        },
+        "confidence": 0.94
+      }
+    ],
+    "metadata": {
+      "id": 63,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: lisinopril was prescribed The patient also has coronary angiography with troponin. Additionally, troponin. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "lisinopril",
+        "type": "Drug",
+        "start": 15,
+        "end": 25
+      },
+      {
+        "text": "coronary angiography",
+        "type": "Procedure",
+        "start": 62,
+        "end": 82
+      },
+      {
+        "text": "troponin",
+        "type": "Lab_Test",
+        "start": 88,
+        "end": 96
+      },
+      {
+        "text": "troponin",
+        "type": "Lab_Test",
+        "start": 112,
+        "end": 120
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 64,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: fever with omeprazole treatment. Patient reports levothyroxine was prescribed. Additionally, ultrasound The patient also has chronic kidney disease. Patient reports blood pressure monitoring. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "fever",
+        "type": "Symptom",
+        "start": 24,
+        "end": 29
+      },
+      {
+        "text": "omeprazole",
+        "type": "Drug",
+        "start": 35,
+        "end": 45
+      },
+      {
+        "text": "levothyroxine",
+        "type": "Drug",
+        "start": 73,
+        "end": 86
+      },
+      {
+        "text": "ultrasound",
+        "type": "Procedure",
+        "start": 117,
+        "end": 127
+      },
+      {
+        "text": "chronic kidney disease",
+        "type": "Disease",
+        "start": 149,
+        "end": 171
+      },
+      {
+        "text": "blood pressure monitoring",
+        "type": "Procedure",
+        "start": 189,
+        "end": 214
+      }
+    ],
+    "relations": [
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "omeprazole",
+          "type": "Drug",
+          "start": 35,
+          "end": 45
+        },
+        "tail": {
+          "text": "levothyroxine",
+          "type": "Drug",
+          "start": 73,
+          "end": 86
+        },
+        "confidence": 0.98
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "levothyroxine",
+          "type": "Drug",
+          "start": 73,
+          "end": 86
+        },
+        "tail": {
+          "text": "omeprazole",
+          "type": "Drug",
+          "start": 35,
+          "end": 45
+        },
+        "confidence": 0.89
+      }
+    ],
+    "metadata": {
+      "id": 65,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 47-year-old patient presents to the clinic. diabetes mellitus. Patient reports nausea The patient also has ultrasound. Patient reports MRI The patient also has ultrasound with liver function tests. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "diabetes mellitus",
+        "type": "Disease",
+        "start": 46,
+        "end": 63
+      },
+      {
+        "text": "nausea",
+        "type": "Symptom",
+        "start": 81,
+        "end": 87
+      },
+      {
+        "text": "ultrasound",
+        "type": "Procedure",
+        "start": 109,
+        "end": 119
+      },
+      {
+        "text": "MRI",
+        "type": "Procedure",
+        "start": 137,
+        "end": 140
+      },
+      {
+        "text": "ultrasound",
+        "type": "Procedure",
+        "start": 162,
+        "end": 172
+      },
+      {
+        "text": "liver function tests",
+        "type": "Lab_Test",
+        "start": 178,
+        "end": 198
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 66,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: hemoglobin A1c. Patient reports lisinopril administered. Patient reports nausea with fatigue. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "hemoglobin A1c",
+        "type": "Lab_Test",
+        "start": 24,
+        "end": 38
+      },
+      {
+        "text": "lisinopril",
+        "type": "Drug",
+        "start": 56,
+        "end": 66
+      },
+      {
+        "text": "nausea",
+        "type": "Symptom",
+        "start": 97,
+        "end": 103
+      },
+      {
+        "text": "fatigue",
+        "type": "Symptom",
+        "start": 109,
+        "end": 116
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 67,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: nausea. Patient reports atorvastatin administered. Additionally, depression. Patient reports troponin with atorvastatin administered. Additionally, diabetes mellitus. Additionally, levothyroxine administered The patient also has X-ray. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "nausea",
+        "type": "Symptom",
+        "start": 15,
+        "end": 21
+      },
+      {
+        "text": "atorvastatin",
+        "type": "Drug",
+        "start": 39,
+        "end": 51
+      },
+      {
+        "text": "depression",
+        "type": "Disease",
+        "start": 80,
+        "end": 90
+      },
+      {
+        "text": "troponin",
+        "type": "Lab_Test",
+        "start": 108,
+        "end": 116
+      },
+      {
+        "text": "atorvastatin",
+        "type": "Drug",
+        "start": 122,
+        "end": 134
+      },
+      {
+        "text": "diabetes mellitus",
+        "type": "Disease",
+        "start": 163,
+        "end": 180
+      },
+      {
+        "text": "levothyroxine",
+        "type": "Drug",
+        "start": 196,
+        "end": 209
+      },
+      {
+        "text": "X-ray",
+        "type": "Procedure",
+        "start": 244,
+        "end": 249
+      }
+    ],
+    "relations": [
+      {
+        "type": "indicates",
+        "head": {
+          "text": "nausea",
+          "type": "Symptom",
+          "start": 15,
+          "end": 21
+        },
+        "tail": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 163,
+          "end": 180
+        },
+        "confidence": 0.93
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "nausea",
+          "type": "Symptom",
+          "start": 15,
+          "end": 21
+        },
+        "tail": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 163,
+          "end": 180
+        },
+        "confidence": 1.0
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "atorvastatin",
+          "type": "Drug",
+          "start": 39,
+          "end": 51
+        },
+        "tail": {
+          "text": "levothyroxine",
+          "type": "Drug",
+          "start": 196,
+          "end": 209
+        },
+        "confidence": 0.98
+      }
+    ],
+    "metadata": {
+      "id": 68,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: biopsy. Additionally, CT scan. Additionally, blood glucose. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "biopsy",
+        "type": "Procedure",
+        "start": 15,
+        "end": 21
+      },
+      {
+        "text": "CT scan",
+        "type": "Procedure",
+        "start": 37,
+        "end": 44
+      },
+      {
+        "text": "blood glucose",
+        "type": "Lab_Test",
+        "start": 60,
+        "end": 73
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 69,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: asthma The patient also has cough The patient also has levothyroxine was prescribed The patient also has coronary angiography. Additionally, coronary artery disease. Additionally, asthma. Patient reports albuterol administered. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "asthma",
+        "type": "Disease",
+        "start": 15,
+        "end": 21
+      },
+      {
+        "text": "cough",
+        "type": "Symptom",
+        "start": 43,
+        "end": 48
+      },
+      {
+        "text": "levothyroxine",
+        "type": "Drug",
+        "start": 70,
+        "end": 83
+      },
+      {
+        "text": "coronary angiography",
+        "type": "Procedure",
+        "start": 120,
+        "end": 140
+      },
+      {
+        "text": "coronary artery disease",
+        "type": "Disease",
+        "start": 156,
+        "end": 179
+      },
+      {
+        "text": "asthma",
+        "type": "Disease",
+        "start": 195,
+        "end": 201
+      },
+      {
+        "text": "albuterol",
+        "type": "Drug",
+        "start": 219,
+        "end": 228
+      }
+    ],
+    "relations": [
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "levothyroxine",
+          "type": "Drug",
+          "start": 70,
+          "end": 83
+        },
+        "tail": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 219,
+          "end": 228
+        },
+        "confidence": 0.86
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 219,
+          "end": 228
+        },
+        "tail": {
+          "text": "levothyroxine",
+          "type": "Drug",
+          "start": 70,
+          "end": 83
+        },
+        "confidence": 0.88
+      }
+    ],
+    "metadata": {
+      "id": 70,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: glucose monitoring with biopsy. Additionally, MRI with coronary artery disease. Patient reports coronary artery disease The patient also has depression. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "glucose monitoring",
+        "type": "Procedure",
+        "start": 24,
+        "end": 42
+      },
+      {
+        "text": "biopsy",
+        "type": "Procedure",
+        "start": 48,
+        "end": 54
+      },
+      {
+        "text": "MRI",
+        "type": "Procedure",
+        "start": 70,
+        "end": 73
+      },
+      {
+        "text": "coronary artery disease",
+        "type": "Disease",
+        "start": 79,
+        "end": 102
+      },
+      {
+        "text": "coronary artery disease",
+        "type": "Disease",
+        "start": 120,
+        "end": 143
+      },
+      {
+        "text": "depression",
+        "type": "Disease",
+        "start": 165,
+        "end": 175
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 71,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 37-year-old patient presents to the clinic. rheumatoid arthritis The patient also has levothyroxine administered. Additionally, C-reactive protein with lisinopril was prescribed. Patient reports coronary artery disease The patient also has MRI with CT scan The patient also has losartan treatment. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "rheumatoid arthritis",
+        "type": "Disease",
+        "start": 46,
+        "end": 66
+      },
+      {
+        "text": "levothyroxine",
+        "type": "Drug",
+        "start": 88,
+        "end": 101
+      },
+      {
+        "text": "C-reactive protein",
+        "type": "Lab_Test",
+        "start": 130,
+        "end": 148
+      },
+      {
+        "text": "lisinopril",
+        "type": "Drug",
+        "start": 154,
+        "end": 164
+      },
+      {
+        "text": "coronary artery disease",
+        "type": "Disease",
+        "start": 197,
+        "end": 220
+      },
+      {
+        "text": "MRI",
+        "type": "Procedure",
+        "start": 242,
+        "end": 245
+      },
+      {
+        "text": "CT scan",
+        "type": "Procedure",
+        "start": 251,
+        "end": 258
+      },
+      {
+        "text": "losartan",
+        "type": "Drug",
+        "start": 280,
+        "end": 288
+      }
+    ],
+    "relations": [
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "levothyroxine",
+          "type": "Drug",
+          "start": 88,
+          "end": 101
+        },
+        "tail": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 280,
+          "end": 288
+        },
+        "confidence": 0.98
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 280,
+          "end": 288
+        },
+        "tail": {
+          "text": "coronary artery disease",
+          "type": "Disease",
+          "start": 197,
+          "end": 220
+        },
+        "confidence": 0.97
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 154,
+          "end": 164
+        },
+        "tail": {
+          "text": "levothyroxine",
+          "type": "Drug",
+          "start": 88,
+          "end": 101
+        },
+        "confidence": 0.88
+      }
+    ],
+    "metadata": {
+      "id": 72,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 76-year-old patient presents to the clinic. atorvastatin treatment The patient also has abdominal pain The patient also has liver function tests with rheumatoid arthritis. Additionally, urinalysis The patient also has troponin The patient also has X-ray. Additionally, metoprolol administered. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "atorvastatin",
+        "type": "Drug",
+        "start": 46,
+        "end": 58
+      },
+      {
+        "text": "abdominal pain",
+        "type": "Symptom",
+        "start": 90,
+        "end": 104
+      },
+      {
+        "text": "liver function tests",
+        "type": "Lab_Test",
+        "start": 126,
+        "end": 146
+      },
+      {
+        "text": "rheumatoid arthritis",
+        "type": "Disease",
+        "start": 152,
+        "end": 172
+      },
+      {
+        "text": "urinalysis",
+        "type": "Lab_Test",
+        "start": 188,
+        "end": 198
+      },
+      {
+        "text": "troponin",
+        "type": "Lab_Test",
+        "start": 220,
+        "end": 228
+      },
+      {
+        "text": "X-ray",
+        "type": "Procedure",
+        "start": 250,
+        "end": 255
+      },
+      {
+        "text": "metoprolol",
+        "type": "Drug",
+        "start": 271,
+        "end": 281
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "atorvastatin",
+          "type": "Drug",
+          "start": 46,
+          "end": 58
+        },
+        "tail": {
+          "text": "rheumatoid arthritis",
+          "type": "Disease",
+          "start": 152,
+          "end": 172
+        },
+        "confidence": 0.97
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "atorvastatin",
+          "type": "Drug",
+          "start": 46,
+          "end": 58
+        },
+        "tail": {
+          "text": "metoprolol",
+          "type": "Drug",
+          "start": 271,
+          "end": 281
+        },
+        "confidence": 0.99
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "rheumatoid arthritis",
+          "type": "Disease",
+          "start": 152,
+          "end": 172
+        },
+        "tail": {
+          "text": "abdominal pain",
+          "type": "Symptom",
+          "start": 90,
+          "end": 104
+        },
+        "confidence": 0.93
+      }
+    ],
+    "metadata": {
+      "id": 73,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 53-year-old patient presents to the clinic. levothyroxine treatment. Additionally, joint pain The patient also has urinalysis. Patient reports complete blood count with rheumatoid arthritis. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "levothyroxine",
+        "type": "Drug",
+        "start": 46,
+        "end": 59
+      },
+      {
+        "text": "joint pain",
+        "type": "Symptom",
+        "start": 85,
+        "end": 95
+      },
+      {
+        "text": "urinalysis",
+        "type": "Lab_Test",
+        "start": 117,
+        "end": 127
+      },
+      {
+        "text": "complete blood count",
+        "type": "Lab_Test",
+        "start": 145,
+        "end": 165
+      },
+      {
+        "text": "rheumatoid arthritis",
+        "type": "Disease",
+        "start": 171,
+        "end": 191
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "levothyroxine",
+          "type": "Drug",
+          "start": 46,
+          "end": 59
+        },
+        "tail": {
+          "text": "rheumatoid arthritis",
+          "type": "Disease",
+          "start": 171,
+          "end": 191
+        },
+        "confidence": 0.89
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "joint pain",
+          "type": "Symptom",
+          "start": 85,
+          "end": 95
+        },
+        "tail": {
+          "text": "rheumatoid arthritis",
+          "type": "Disease",
+          "start": 171,
+          "end": 191
+        },
+        "confidence": 0.98
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "joint pain",
+          "type": "Symptom",
+          "start": 85,
+          "end": 95
+        },
+        "tail": {
+          "text": "rheumatoid arthritis",
+          "type": "Disease",
+          "start": 171,
+          "end": 191
+        },
+        "confidence": 0.95
+      }
+    ],
+    "metadata": {
+      "id": 74,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 28-year-old patient presents to the clinic. migraine. Patient reports metformin treatment The patient also has hypertension. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "migraine",
+        "type": "Disease",
+        "start": 46,
+        "end": 54
+      },
+      {
+        "text": "metformin",
+        "type": "Drug",
+        "start": 72,
+        "end": 81
+      },
+      {
+        "text": "hypertension",
+        "type": "Disease",
+        "start": 113,
+        "end": 125
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "metformin",
+          "type": "Drug",
+          "start": 72,
+          "end": 81
+        },
+        "tail": {
+          "text": "hypertension",
+          "type": "Disease",
+          "start": 113,
+          "end": 125
+        },
+        "confidence": 0.91
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "metformin",
+          "type": "Drug",
+          "start": 72,
+          "end": 81
+        },
+        "tail": {
+          "text": "hypertension",
+          "type": "Disease",
+          "start": 113,
+          "end": 125
+        },
+        "confidence": 0.85
+      }
+    ],
+    "metadata": {
+      "id": 75,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: complete blood count The patient also has lipid panel with complete blood count. Additionally, rheumatoid arthritis. Additionally, lipid panel. Additionally, levothyroxine treatment with lipid panel. Patient reports omeprazole treatment. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "complete blood count",
+        "type": "Lab_Test",
+        "start": 24,
+        "end": 44
+      },
+      {
+        "text": "lipid panel",
+        "type": "Lab_Test",
+        "start": 66,
+        "end": 77
+      },
+      {
+        "text": "complete blood count",
+        "type": "Lab_Test",
+        "start": 83,
+        "end": 103
+      },
+      {
+        "text": "rheumatoid arthritis",
+        "type": "Disease",
+        "start": 119,
+        "end": 139
+      },
+      {
+        "text": "lipid panel",
+        "type": "Lab_Test",
+        "start": 155,
+        "end": 166
+      },
+      {
+        "text": "levothyroxine",
+        "type": "Drug",
+        "start": 182,
+        "end": 195
+      },
+      {
+        "text": "lipid panel",
+        "type": "Lab_Test",
+        "start": 211,
+        "end": 222
+      },
+      {
+        "text": "omeprazole",
+        "type": "Drug",
+        "start": 240,
+        "end": 250
+      }
+    ],
+    "relations": [
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "omeprazole",
+          "type": "Drug",
+          "start": 240,
+          "end": 250
+        },
+        "tail": {
+          "text": "levothyroxine",
+          "type": "Drug",
+          "start": 182,
+          "end": 195
+        },
+        "confidence": 0.93
+      }
+    ],
+    "metadata": {
+      "id": 76,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: asthma with lipid panel. Additionally, nausea The patient also has biopsy. Patient reports losartan was prescribed. Additionally, losartan treatment with joint pain. Patient reports liver function tests. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "asthma",
+        "type": "Disease",
+        "start": 24,
+        "end": 30
+      },
+      {
+        "text": "lipid panel",
+        "type": "Lab_Test",
+        "start": 36,
+        "end": 47
+      },
+      {
+        "text": "nausea",
+        "type": "Symptom",
+        "start": 63,
+        "end": 69
+      },
+      {
+        "text": "biopsy",
+        "type": "Procedure",
+        "start": 91,
+        "end": 97
+      },
+      {
+        "text": "losartan",
+        "type": "Drug",
+        "start": 115,
+        "end": 123
+      },
+      {
+        "text": "losartan",
+        "type": "Drug",
+        "start": 154,
+        "end": 162
+      },
+      {
+        "text": "joint pain",
+        "type": "Symptom",
+        "start": 178,
+        "end": 188
+      },
+      {
+        "text": "liver function tests",
+        "type": "Lab_Test",
+        "start": 206,
+        "end": 226
+      }
+    ],
+    "relations": [
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 115,
+          "end": 123
+        },
+        "tail": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 154,
+          "end": 162
+        },
+        "confidence": 0.98
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 154,
+          "end": 162
+        },
+        "tail": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 115,
+          "end": 123
+        },
+        "confidence": 0.85
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "asthma",
+          "type": "Disease",
+          "start": 24,
+          "end": 30
+        },
+        "tail": {
+          "text": "nausea",
+          "type": "Symptom",
+          "start": 63,
+          "end": 69
+        },
+        "confidence": 0.96
+      }
+    ],
+    "metadata": {
+      "id": 77,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: albuterol was prescribed The patient also has chest pain. Patient reports abdominal pain The patient also has metoprolol treatment. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "albuterol",
+        "type": "Drug",
+        "start": 24,
+        "end": 33
+      },
+      {
+        "text": "chest pain",
+        "type": "Symptom",
+        "start": 70,
+        "end": 80
+      },
+      {
+        "text": "abdominal pain",
+        "type": "Symptom",
+        "start": 98,
+        "end": 112
+      },
+      {
+        "text": "metoprolol",
+        "type": "Drug",
+        "start": 134,
+        "end": 144
+      }
+    ],
+    "relations": [
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 24,
+          "end": 33
+        },
+        "tail": {
+          "text": "metoprolol",
+          "type": "Drug",
+          "start": 134,
+          "end": 144
+        },
+        "confidence": 0.89
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 24,
+          "end": 33
+        },
+        "tail": {
+          "text": "metoprolol",
+          "type": "Drug",
+          "start": 134,
+          "end": 144
+        },
+        "confidence": 0.98
+      }
+    ],
+    "metadata": {
+      "id": 78,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: shortness of breath The patient also has blood glucose with fever with fever with losartan was prescribed. Additionally, chronic kidney disease. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "shortness of breath",
+        "type": "Symptom",
+        "start": 24,
+        "end": 43
+      },
+      {
+        "text": "blood glucose",
+        "type": "Lab_Test",
+        "start": 65,
+        "end": 78
+      },
+      {
+        "text": "fever",
+        "type": "Symptom",
+        "start": 84,
+        "end": 89
+      },
+      {
+        "text": "fever",
+        "type": "Symptom",
+        "start": 95,
+        "end": 100
+      },
+      {
+        "text": "losartan",
+        "type": "Drug",
+        "start": 106,
+        "end": 114
+      },
+      {
+        "text": "chronic kidney disease",
+        "type": "Disease",
+        "start": 145,
+        "end": 167
+      }
+    ],
+    "relations": [
+      {
+        "type": "causes",
+        "head": {
+          "text": "chronic kidney disease",
+          "type": "Disease",
+          "start": 145,
+          "end": 167
+        },
+        "tail": {
+          "text": "fever",
+          "type": "Symptom",
+          "start": 95,
+          "end": 100
+        },
+        "confidence": 0.85
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 106,
+          "end": 114
+        },
+        "tail": {
+          "text": "chronic kidney disease",
+          "type": "Disease",
+          "start": 145,
+          "end": 167
+        },
+        "confidence": 0.87
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "shortness of breath",
+          "type": "Symptom",
+          "start": 24,
+          "end": 43
+        },
+        "tail": {
+          "text": "chronic kidney disease",
+          "type": "Disease",
+          "start": 145,
+          "end": 167
+        },
+        "confidence": 0.87
+      }
+    ],
+    "metadata": {
+      "id": 79,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: abdominal pain with ultrasound with complete blood count. Additionally, lisinopril was prescribed. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "abdominal pain",
+        "type": "Symptom",
+        "start": 24,
+        "end": 38
+      },
+      {
+        "text": "ultrasound",
+        "type": "Procedure",
+        "start": 44,
+        "end": 54
+      },
+      {
+        "text": "complete blood count",
+        "type": "Lab_Test",
+        "start": 60,
+        "end": 80
+      },
+      {
+        "text": "lisinopril",
+        "type": "Drug",
+        "start": 96,
+        "end": 106
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 80,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: complete blood count. Patient reports blood pressure monitoring. Patient reports metoprolol treatment with lisinopril was prescribed with dizziness with blood glucose. Additionally, amlodipine administered. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "complete blood count",
+        "type": "Lab_Test",
+        "start": 15,
+        "end": 35
+      },
+      {
+        "text": "blood pressure monitoring",
+        "type": "Procedure",
+        "start": 53,
+        "end": 78
+      },
+      {
+        "text": "metoprolol",
+        "type": "Drug",
+        "start": 96,
+        "end": 106
+      },
+      {
+        "text": "lisinopril",
+        "type": "Drug",
+        "start": 122,
+        "end": 132
+      },
+      {
+        "text": "dizziness",
+        "type": "Symptom",
+        "start": 153,
+        "end": 162
+      },
+      {
+        "text": "blood glucose",
+        "type": "Lab_Test",
+        "start": 168,
+        "end": 181
+      },
+      {
+        "text": "amlodipine",
+        "type": "Drug",
+        "start": 197,
+        "end": 207
+      }
+    ],
+    "relations": [
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 122,
+          "end": 132
+        },
+        "tail": {
+          "text": "metoprolol",
+          "type": "Drug",
+          "start": 96,
+          "end": 106
+        },
+        "confidence": 1.0
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 122,
+          "end": 132
+        },
+        "tail": {
+          "text": "amlodipine",
+          "type": "Drug",
+          "start": 197,
+          "end": 207
+        },
+        "confidence": 0.87
+      }
+    ],
+    "metadata": {
+      "id": 81,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: cough with shortness of breath The patient also has abdominal pain The patient also has physical therapy. Patient reports troponin. Additionally, coronary artery disease. Patient reports coronary angiography The patient also has coronary artery disease. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "cough",
+        "type": "Symptom",
+        "start": 15,
+        "end": 20
+      },
+      {
+        "text": "shortness of breath",
+        "type": "Symptom",
+        "start": 26,
+        "end": 45
+      },
+      {
+        "text": "abdominal pain",
+        "type": "Symptom",
+        "start": 67,
+        "end": 81
+      },
+      {
+        "text": "physical therapy",
+        "type": "Procedure",
+        "start": 103,
+        "end": 119
+      },
+      {
+        "text": "troponin",
+        "type": "Lab_Test",
+        "start": 137,
+        "end": 145
+      },
+      {
+        "text": "coronary artery disease",
+        "type": "Disease",
+        "start": 161,
+        "end": 184
+      },
+      {
+        "text": "coronary angiography",
+        "type": "Procedure",
+        "start": 202,
+        "end": 222
+      },
+      {
+        "text": "coronary artery disease",
+        "type": "Disease",
+        "start": 244,
+        "end": 267
+      }
+    ],
+    "relations": [
+      {
+        "type": "indicates",
+        "head": {
+          "text": "cough",
+          "type": "Symptom",
+          "start": 15,
+          "end": 20
+        },
+        "tail": {
+          "text": "coronary artery disease",
+          "type": "Disease",
+          "start": 244,
+          "end": 267
+        },
+        "confidence": 0.97
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "cough",
+          "type": "Symptom",
+          "start": 15,
+          "end": 20
+        },
+        "tail": {
+          "text": "coronary artery disease",
+          "type": "Disease",
+          "start": 244,
+          "end": 267
+        },
+        "confidence": 0.94
+      }
+    ],
+    "metadata": {
+      "id": 82,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: hemoglobin A1c The patient also has rheumatoid arthritis The patient also has chest pain The patient also has shortness of breath. Patient reports metoprolol treatment. Patient reports metoprolol administered. Patient reports ultrasound. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "hemoglobin A1c",
+        "type": "Lab_Test",
+        "start": 15,
+        "end": 29
+      },
+      {
+        "text": "rheumatoid arthritis",
+        "type": "Disease",
+        "start": 51,
+        "end": 71
+      },
+      {
+        "text": "chest pain",
+        "type": "Symptom",
+        "start": 93,
+        "end": 103
+      },
+      {
+        "text": "shortness of breath",
+        "type": "Symptom",
+        "start": 125,
+        "end": 144
+      },
+      {
+        "text": "metoprolol",
+        "type": "Drug",
+        "start": 162,
+        "end": 172
+      },
+      {
+        "text": "metoprolol",
+        "type": "Drug",
+        "start": 200,
+        "end": 210
+      },
+      {
+        "text": "ultrasound",
+        "type": "Procedure",
+        "start": 241,
+        "end": 251
+      }
+    ],
+    "relations": [
+      {
+        "type": "causes",
+        "head": {
+          "text": "rheumatoid arthritis",
+          "type": "Disease",
+          "start": 51,
+          "end": 71
+        },
+        "tail": {
+          "text": "shortness of breath",
+          "type": "Symptom",
+          "start": 125,
+          "end": 144
+        },
+        "confidence": 0.91
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "rheumatoid arthritis",
+          "type": "Disease",
+          "start": 51,
+          "end": 71
+        },
+        "tail": {
+          "text": "shortness of breath",
+          "type": "Symptom",
+          "start": 125,
+          "end": 144
+        },
+        "confidence": 0.86
+      }
+    ],
+    "metadata": {
+      "id": 83,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 38-year-old patient presents to the clinic. pneumonia. Additionally, cough. Additionally, albuterol treatment. Patient reports joint pain. Additionally, atorvastatin was prescribed The patient also has cough The patient also has headache with fatigue. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "pneumonia",
+        "type": "Disease",
+        "start": 46,
+        "end": 55
+      },
+      {
+        "text": "cough",
+        "type": "Symptom",
+        "start": 71,
+        "end": 76
+      },
+      {
+        "text": "albuterol",
+        "type": "Drug",
+        "start": 92,
+        "end": 101
+      },
+      {
+        "text": "joint pain",
+        "type": "Symptom",
+        "start": 129,
+        "end": 139
+      },
+      {
+        "text": "atorvastatin",
+        "type": "Drug",
+        "start": 155,
+        "end": 167
+      },
+      {
+        "text": "cough",
+        "type": "Symptom",
+        "start": 204,
+        "end": 209
+      },
+      {
+        "text": "headache",
+        "type": "Symptom",
+        "start": 231,
+        "end": 239
+      },
+      {
+        "text": "fatigue",
+        "type": "Symptom",
+        "start": 245,
+        "end": 252
+      }
+    ],
+    "relations": [
+      {
+        "type": "causes",
+        "head": {
+          "text": "pneumonia",
+          "type": "Disease",
+          "start": 46,
+          "end": 55
+        },
+        "tail": {
+          "text": "fatigue",
+          "type": "Symptom",
+          "start": 245,
+          "end": 252
+        },
+        "confidence": 0.98
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "pneumonia",
+          "type": "Disease",
+          "start": 46,
+          "end": 55
+        },
+        "tail": {
+          "text": "fatigue",
+          "type": "Symptom",
+          "start": 245,
+          "end": 252
+        },
+        "confidence": 0.92
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 92,
+          "end": 101
+        },
+        "tail": {
+          "text": "pneumonia",
+          "type": "Disease",
+          "start": 46,
+          "end": 55
+        },
+        "confidence": 0.93
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "pneumonia",
+          "type": "Disease",
+          "start": 46,
+          "end": 55
+        },
+        "tail": {
+          "text": "cough",
+          "type": "Symptom",
+          "start": 204,
+          "end": 209
+        },
+        "confidence": 0.9
+      }
+    ],
+    "metadata": {
+      "id": 84,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: CT scan. Additionally, urinalysis. Patient reports metformin administered. Patient reports chronic kidney disease. Patient reports ultrasound. Additionally, rheumatoid arthritis with losartan administered. Additionally, atorvastatin administered. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "CT scan",
+        "type": "Procedure",
+        "start": 24,
+        "end": 31
+      },
+      {
+        "text": "urinalysis",
+        "type": "Lab_Test",
+        "start": 47,
+        "end": 57
+      },
+      {
+        "text": "metformin",
+        "type": "Drug",
+        "start": 75,
+        "end": 84
+      },
+      {
+        "text": "chronic kidney disease",
+        "type": "Disease",
+        "start": 115,
+        "end": 137
+      },
+      {
+        "text": "ultrasound",
+        "type": "Procedure",
+        "start": 155,
+        "end": 165
+      },
+      {
+        "text": "rheumatoid arthritis",
+        "type": "Disease",
+        "start": 181,
+        "end": 201
+      },
+      {
+        "text": "losartan",
+        "type": "Drug",
+        "start": 207,
+        "end": 215
+      },
+      {
+        "text": "atorvastatin",
+        "type": "Drug",
+        "start": 244,
+        "end": 256
+      }
+    ],
+    "relations": [
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 207,
+          "end": 215
+        },
+        "tail": {
+          "text": "metformin",
+          "type": "Drug",
+          "start": 75,
+          "end": 84
+        },
+        "confidence": 0.92
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "metformin",
+          "type": "Drug",
+          "start": 75,
+          "end": 84
+        },
+        "tail": {
+          "text": "rheumatoid arthritis",
+          "type": "Disease",
+          "start": 181,
+          "end": 201
+        },
+        "confidence": 0.95
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 207,
+          "end": 215
+        },
+        "tail": {
+          "text": "atorvastatin",
+          "type": "Drug",
+          "start": 244,
+          "end": 256
+        },
+        "confidence": 0.91
+      }
+    ],
+    "metadata": {
+      "id": 85,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: coronary angiography with dizziness. Patient reports MRI. Patient reports C-reactive protein. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "coronary angiography",
+        "type": "Procedure",
+        "start": 24,
+        "end": 44
+      },
+      {
+        "text": "dizziness",
+        "type": "Symptom",
+        "start": 50,
+        "end": 59
+      },
+      {
+        "text": "MRI",
+        "type": "Procedure",
+        "start": 77,
+        "end": 80
+      },
+      {
+        "text": "C-reactive protein",
+        "type": "Lab_Test",
+        "start": 98,
+        "end": 116
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 86,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: hypertension. Additionally, nausea. Additionally, nausea The patient also has levothyroxine was prescribed. Additionally, losartan treatment. Patient reports glucose monitoring The patient also has physical therapy. Additionally, C-reactive protein. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "hypertension",
+        "type": "Disease",
+        "start": 24,
+        "end": 36
+      },
+      {
+        "text": "nausea",
+        "type": "Symptom",
+        "start": 52,
+        "end": 58
+      },
+      {
+        "text": "nausea",
+        "type": "Symptom",
+        "start": 74,
+        "end": 80
+      },
+      {
+        "text": "levothyroxine",
+        "type": "Drug",
+        "start": 102,
+        "end": 115
+      },
+      {
+        "text": "losartan",
+        "type": "Drug",
+        "start": 146,
+        "end": 154
+      },
+      {
+        "text": "glucose monitoring",
+        "type": "Procedure",
+        "start": 182,
+        "end": 200
+      },
+      {
+        "text": "physical therapy",
+        "type": "Procedure",
+        "start": 222,
+        "end": 238
+      },
+      {
+        "text": "C-reactive protein",
+        "type": "Lab_Test",
+        "start": 254,
+        "end": 272
+      }
+    ],
+    "relations": [
+      {
+        "type": "indicates",
+        "head": {
+          "text": "nausea",
+          "type": "Symptom",
+          "start": 52,
+          "end": 58
+        },
+        "tail": {
+          "text": "hypertension",
+          "type": "Disease",
+          "start": 24,
+          "end": 36
+        },
+        "confidence": 0.86
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "hypertension",
+          "type": "Disease",
+          "start": 24,
+          "end": 36
+        },
+        "tail": {
+          "text": "nausea",
+          "type": "Symptom",
+          "start": 52,
+          "end": 58
+        },
+        "confidence": 0.97
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "nausea",
+          "type": "Symptom",
+          "start": 52,
+          "end": 58
+        },
+        "tail": {
+          "text": "hypertension",
+          "type": "Disease",
+          "start": 24,
+          "end": 36
+        },
+        "confidence": 0.89
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "nausea",
+          "type": "Symptom",
+          "start": 74,
+          "end": 80
+        },
+        "tail": {
+          "text": "hypertension",
+          "type": "Disease",
+          "start": 24,
+          "end": 36
+        },
+        "confidence": 0.95
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 146,
+          "end": 154
+        },
+        "tail": {
+          "text": "levothyroxine",
+          "type": "Drug",
+          "start": 102,
+          "end": 115
+        },
+        "confidence": 0.94
+      }
+    ],
+    "metadata": {
+      "id": 87,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: diabetes mellitus. Additionally, albuterol treatment. Additionally, biopsy with blood glucose. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "diabetes mellitus",
+        "type": "Disease",
+        "start": 24,
+        "end": 41
+      },
+      {
+        "text": "albuterol",
+        "type": "Drug",
+        "start": 57,
+        "end": 66
+      },
+      {
+        "text": "biopsy",
+        "type": "Procedure",
+        "start": 92,
+        "end": 98
+      },
+      {
+        "text": "blood glucose",
+        "type": "Lab_Test",
+        "start": 104,
+        "end": 117
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 57,
+          "end": 66
+        },
+        "tail": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 24,
+          "end": 41
+        },
+        "confidence": 0.92
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 57,
+          "end": 66
+        },
+        "tail": {
+          "text": "diabetes mellitus",
+          "type": "Disease",
+          "start": 24,
+          "end": 41
+        },
+        "confidence": 0.93
+      }
+    ],
+    "metadata": {
+      "id": 88,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 41-year-old patient presents to the clinic. thyroid function tests with blood pressure monitoring. Additionally, dizziness. Patient reports blood pressure monitoring. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "thyroid function tests",
+        "type": "Lab_Test",
+        "start": 46,
+        "end": 68
+      },
+      {
+        "text": "blood pressure monitoring",
+        "type": "Procedure",
+        "start": 74,
+        "end": 99
+      },
+      {
+        "text": "dizziness",
+        "type": "Symptom",
+        "start": 115,
+        "end": 124
+      },
+      {
+        "text": "blood pressure monitoring",
+        "type": "Procedure",
+        "start": 142,
+        "end": 167
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 89,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: chronic kidney disease The patient also has CT scan. Patient reports creatinine with endoscopy. Patient reports albuterol was prescribed. Patient reports chest pain. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "chronic kidney disease",
+        "type": "Disease",
+        "start": 15,
+        "end": 37
+      },
+      {
+        "text": "CT scan",
+        "type": "Procedure",
+        "start": 59,
+        "end": 66
+      },
+      {
+        "text": "creatinine",
+        "type": "Lab_Test",
+        "start": 84,
+        "end": 94
+      },
+      {
+        "text": "endoscopy",
+        "type": "Procedure",
+        "start": 100,
+        "end": 109
+      },
+      {
+        "text": "albuterol",
+        "type": "Drug",
+        "start": 127,
+        "end": 136
+      },
+      {
+        "text": "chest pain",
+        "type": "Symptom",
+        "start": 169,
+        "end": 179
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 127,
+          "end": 136
+        },
+        "tail": {
+          "text": "chronic kidney disease",
+          "type": "Disease",
+          "start": 15,
+          "end": 37
+        },
+        "confidence": 0.91
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "chronic kidney disease",
+          "type": "Disease",
+          "start": 15,
+          "end": 37
+        },
+        "tail": {
+          "text": "chest pain",
+          "type": "Symptom",
+          "start": 169,
+          "end": 179
+        },
+        "confidence": 0.97
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "chronic kidney disease",
+          "type": "Disease",
+          "start": 15,
+          "end": 37
+        },
+        "tail": {
+          "text": "chest pain",
+          "type": "Symptom",
+          "start": 169,
+          "end": 179
+        },
+        "confidence": 0.9
+      }
+    ],
+    "metadata": {
+      "id": 90,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 71-year-old patient presents to the clinic. rheumatoid arthritis. Patient reports abdominal pain The patient also has coronary artery disease with blood pressure monitoring with amlodipine treatment. Patient reports omeprazole treatment with chest pain. Additionally, physical therapy. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "rheumatoid arthritis",
+        "type": "Disease",
+        "start": 46,
+        "end": 66
+      },
+      {
+        "text": "abdominal pain",
+        "type": "Symptom",
+        "start": 84,
+        "end": 98
+      },
+      {
+        "text": "coronary artery disease",
+        "type": "Disease",
+        "start": 120,
+        "end": 143
+      },
+      {
+        "text": "blood pressure monitoring",
+        "type": "Procedure",
+        "start": 149,
+        "end": 174
+      },
+      {
+        "text": "amlodipine",
+        "type": "Drug",
+        "start": 180,
+        "end": 190
+      },
+      {
+        "text": "omeprazole",
+        "type": "Drug",
+        "start": 218,
+        "end": 228
+      },
+      {
+        "text": "chest pain",
+        "type": "Symptom",
+        "start": 244,
+        "end": 254
+      },
+      {
+        "text": "physical therapy",
+        "type": "Procedure",
+        "start": 270,
+        "end": 286
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "omeprazole",
+          "type": "Drug",
+          "start": 218,
+          "end": 228
+        },
+        "tail": {
+          "text": "coronary artery disease",
+          "type": "Disease",
+          "start": 120,
+          "end": 143
+        },
+        "confidence": 0.96
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "amlodipine",
+          "type": "Drug",
+          "start": 180,
+          "end": 190
+        },
+        "tail": {
+          "text": "omeprazole",
+          "type": "Drug",
+          "start": 218,
+          "end": 228
+        },
+        "confidence": 0.91
+      }
+    ],
+    "metadata": {
+      "id": 91,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: chest pain The patient also has liver function tests with creatinine. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "chest pain",
+        "type": "Symptom",
+        "start": 15,
+        "end": 25
+      },
+      {
+        "text": "liver function tests",
+        "type": "Lab_Test",
+        "start": 47,
+        "end": 67
+      },
+      {
+        "text": "creatinine",
+        "type": "Lab_Test",
+        "start": 73,
+        "end": 83
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 92,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 71-year-old patient presents to the clinic. amlodipine treatment with physical therapy. Additionally, urinary tract infection. Additionally, amlodipine treatment. Additionally, hypertension. Additionally, lisinopril treatment with abdominal pain The patient also has hypertension. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "amlodipine",
+        "type": "Drug",
+        "start": 46,
+        "end": 56
+      },
+      {
+        "text": "physical therapy",
+        "type": "Procedure",
+        "start": 72,
+        "end": 88
+      },
+      {
+        "text": "urinary tract infection",
+        "type": "Disease",
+        "start": 104,
+        "end": 127
+      },
+      {
+        "text": "amlodipine",
+        "type": "Drug",
+        "start": 143,
+        "end": 153
+      },
+      {
+        "text": "hypertension",
+        "type": "Disease",
+        "start": 179,
+        "end": 191
+      },
+      {
+        "text": "lisinopril",
+        "type": "Drug",
+        "start": 207,
+        "end": 217
+      },
+      {
+        "text": "abdominal pain",
+        "type": "Symptom",
+        "start": 233,
+        "end": 247
+      },
+      {
+        "text": "hypertension",
+        "type": "Disease",
+        "start": 269,
+        "end": 281
+      }
+    ],
+    "relations": [
+      {
+        "type": "indicates",
+        "head": {
+          "text": "abdominal pain",
+          "type": "Symptom",
+          "start": 233,
+          "end": 247
+        },
+        "tail": {
+          "text": "hypertension",
+          "type": "Disease",
+          "start": 179,
+          "end": 191
+        },
+        "confidence": 0.9
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "lisinopril",
+          "type": "Drug",
+          "start": 207,
+          "end": 217
+        },
+        "tail": {
+          "text": "hypertension",
+          "type": "Disease",
+          "start": 179,
+          "end": 191
+        },
+        "confidence": 1.0
+      }
+    ],
+    "metadata": {
+      "id": 93,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: endoscopy. Patient reports losartan administered with joint pain with creatinine The patient also has X-ray. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "endoscopy",
+        "type": "Procedure",
+        "start": 24,
+        "end": 33
+      },
+      {
+        "text": "losartan",
+        "type": "Drug",
+        "start": 51,
+        "end": 59
+      },
+      {
+        "text": "joint pain",
+        "type": "Symptom",
+        "start": 78,
+        "end": 88
+      },
+      {
+        "text": "creatinine",
+        "type": "Lab_Test",
+        "start": 94,
+        "end": 104
+      },
+      {
+        "text": "X-ray",
+        "type": "Procedure",
+        "start": 126,
+        "end": 131
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 94,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Medical record summary: fever with depression. Additionally, ultrasound. Additionally, C-reactive protein. Patient reports chronic kidney disease. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "fever",
+        "type": "Symptom",
+        "start": 24,
+        "end": 29
+      },
+      {
+        "text": "depression",
+        "type": "Disease",
+        "start": 35,
+        "end": 45
+      },
+      {
+        "text": "ultrasound",
+        "type": "Procedure",
+        "start": 61,
+        "end": 71
+      },
+      {
+        "text": "C-reactive protein",
+        "type": "Lab_Test",
+        "start": 87,
+        "end": 105
+      },
+      {
+        "text": "chronic kidney disease",
+        "type": "Disease",
+        "start": 123,
+        "end": 145
+      }
+    ],
+    "relations": [
+      {
+        "type": "indicates",
+        "head": {
+          "text": "fever",
+          "type": "Symptom",
+          "start": 24,
+          "end": 29
+        },
+        "tail": {
+          "text": "chronic kidney disease",
+          "type": "Disease",
+          "start": 123,
+          "end": 145
+        },
+        "confidence": 0.94
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "fever",
+          "type": "Symptom",
+          "start": 24,
+          "end": 29
+        },
+        "tail": {
+          "text": "chronic kidney disease",
+          "type": "Disease",
+          "start": 123,
+          "end": 145
+        },
+        "confidence": 0.89
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "depression",
+          "type": "Disease",
+          "start": 35,
+          "end": 45
+        },
+        "tail": {
+          "text": "fever",
+          "type": "Symptom",
+          "start": 24,
+          "end": 29
+        },
+        "confidence": 0.89
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "chronic kidney disease",
+          "type": "Disease",
+          "start": 123,
+          "end": 145
+        },
+        "tail": {
+          "text": "fever",
+          "type": "Symptom",
+          "start": 24,
+          "end": 29
+        },
+        "confidence": 0.87
+      }
+    ],
+    "metadata": {
+      "id": 95,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 64-year-old patient presents to the clinic. albuterol administered The patient also has nausea. Additionally, losartan was prescribed. Patient reports asthma. Additionally, nausea The patient also has urinalysis. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "albuterol",
+        "type": "Drug",
+        "start": 46,
+        "end": 55
+      },
+      {
+        "text": "nausea",
+        "type": "Symptom",
+        "start": 90,
+        "end": 96
+      },
+      {
+        "text": "losartan",
+        "type": "Drug",
+        "start": 112,
+        "end": 120
+      },
+      {
+        "text": "asthma",
+        "type": "Disease",
+        "start": 153,
+        "end": 159
+      },
+      {
+        "text": "nausea",
+        "type": "Symptom",
+        "start": 175,
+        "end": 181
+      },
+      {
+        "text": "urinalysis",
+        "type": "Lab_Test",
+        "start": 203,
+        "end": 213
+      }
+    ],
+    "relations": [
+      {
+        "type": "indicates",
+        "head": {
+          "text": "nausea",
+          "type": "Symptom",
+          "start": 90,
+          "end": 96
+        },
+        "tail": {
+          "text": "asthma",
+          "type": "Disease",
+          "start": 153,
+          "end": 159
+        },
+        "confidence": 0.85
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 46,
+          "end": 55
+        },
+        "tail": {
+          "text": "asthma",
+          "type": "Disease",
+          "start": 153,
+          "end": 159
+        },
+        "confidence": 0.88
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 112,
+          "end": 120
+        },
+        "tail": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 46,
+          "end": 55
+        },
+        "confidence": 0.92
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 46,
+          "end": 55
+        },
+        "tail": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 112,
+          "end": 120
+        },
+        "confidence": 0.88
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 46,
+          "end": 55
+        },
+        "tail": {
+          "text": "losartan",
+          "type": "Drug",
+          "start": 112,
+          "end": 120
+        },
+        "confidence": 0.99
+      }
+    ],
+    "metadata": {
+      "id": 96,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 42-year-old patient presents to the clinic. endoscopy. Patient reports chest pain with albuterol was prescribed. Patient reports levothyroxine was prescribed. Additionally, abdominal pain. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "endoscopy",
+        "type": "Procedure",
+        "start": 46,
+        "end": 55
+      },
+      {
+        "text": "chest pain",
+        "type": "Symptom",
+        "start": 73,
+        "end": 83
+      },
+      {
+        "text": "albuterol",
+        "type": "Drug",
+        "start": 89,
+        "end": 98
+      },
+      {
+        "text": "levothyroxine",
+        "type": "Drug",
+        "start": 131,
+        "end": 144
+      },
+      {
+        "text": "abdominal pain",
+        "type": "Symptom",
+        "start": 175,
+        "end": 189
+      }
+    ],
+    "relations": [
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "levothyroxine",
+          "type": "Drug",
+          "start": 131,
+          "end": 144
+        },
+        "tail": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 89,
+          "end": 98
+        },
+        "confidence": 0.99
+      },
+      {
+        "type": "interacts_with",
+        "head": {
+          "text": "levothyroxine",
+          "type": "Drug",
+          "start": 131,
+          "end": 144
+        },
+        "tail": {
+          "text": "albuterol",
+          "type": "Drug",
+          "start": 89,
+          "end": 98
+        },
+        "confidence": 0.92
+      }
+    ],
+    "metadata": {
+      "id": 97,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 29-year-old patient presents to the clinic. dizziness with biopsy with fever. Patient reports headache with depression. Additionally, asthma with blood pressure monitoring with headache. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "dizziness",
+        "type": "Symptom",
+        "start": 46,
+        "end": 55
+      },
+      {
+        "text": "biopsy",
+        "type": "Procedure",
+        "start": 61,
+        "end": 67
+      },
+      {
+        "text": "fever",
+        "type": "Symptom",
+        "start": 73,
+        "end": 78
+      },
+      {
+        "text": "headache",
+        "type": "Symptom",
+        "start": 96,
+        "end": 104
+      },
+      {
+        "text": "depression",
+        "type": "Disease",
+        "start": 110,
+        "end": 120
+      },
+      {
+        "text": "asthma",
+        "type": "Disease",
+        "start": 136,
+        "end": 142
+      },
+      {
+        "text": "blood pressure monitoring",
+        "type": "Procedure",
+        "start": 148,
+        "end": 173
+      },
+      {
+        "text": "headache",
+        "type": "Symptom",
+        "start": 179,
+        "end": 187
+      }
+    ],
+    "relations": [
+      {
+        "type": "indicates",
+        "head": {
+          "text": "dizziness",
+          "type": "Symptom",
+          "start": 46,
+          "end": 55
+        },
+        "tail": {
+          "text": "asthma",
+          "type": "Disease",
+          "start": 136,
+          "end": 142
+        },
+        "confidence": 0.96
+      },
+      {
+        "type": "causes",
+        "head": {
+          "text": "asthma",
+          "type": "Disease",
+          "start": 136,
+          "end": 142
+        },
+        "tail": {
+          "text": "headache",
+          "type": "Symptom",
+          "start": 96,
+          "end": 104
+        },
+        "confidence": 0.94
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "dizziness",
+          "type": "Symptom",
+          "start": 46,
+          "end": 55
+        },
+        "tail": {
+          "text": "asthma",
+          "type": "Disease",
+          "start": 136,
+          "end": 142
+        },
+        "confidence": 0.87
+      },
+      {
+        "type": "indicates",
+        "head": {
+          "text": "dizziness",
+          "type": "Symptom",
+          "start": 46,
+          "end": 55
+        },
+        "tail": {
+          "text": "asthma",
+          "type": "Disease",
+          "start": 136,
+          "end": 142
+        },
+        "confidence": 0.91
+      }
+    ],
+    "metadata": {
+      "id": 98,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "Clinical case: fatigue The patient also has endoscopy. Additionally, levothyroxine treatment. Additionally, MRI with glucose monitoring with complete blood count. Patient reports hemoglobin A1c with biopsy. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "fatigue",
+        "type": "Symptom",
+        "start": 15,
+        "end": 22
+      },
+      {
+        "text": "endoscopy",
+        "type": "Procedure",
+        "start": 44,
+        "end": 53
+      },
+      {
+        "text": "levothyroxine",
+        "type": "Drug",
+        "start": 69,
+        "end": 82
+      },
+      {
+        "text": "MRI",
+        "type": "Procedure",
+        "start": 108,
+        "end": 111
+      },
+      {
+        "text": "glucose monitoring",
+        "type": "Procedure",
+        "start": 117,
+        "end": 135
+      },
+      {
+        "text": "complete blood count",
+        "type": "Lab_Test",
+        "start": 141,
+        "end": 161
+      },
+      {
+        "text": "hemoglobin A1c",
+        "type": "Lab_Test",
+        "start": 179,
+        "end": 193
+      },
+      {
+        "text": "biopsy",
+        "type": "Procedure",
+        "start": 199,
+        "end": 205
+      }
+    ],
+    "relations": [],
+    "metadata": {
+      "id": 99,
+      "synthetic": true
+    }
+  },
+  {
+    "text": "A 76-year-old patient presents to the clinic. urinary tract infection with metformin was prescribed. Additionally, biopsy with X-ray. Follow-up scheduled.",
+    "entities": [
+      {
+        "text": "urinary tract infection",
+        "type": "Disease",
+        "start": 46,
+        "end": 69
+      },
+      {
+        "text": "metformin",
+        "type": "Drug",
+        "start": 75,
+        "end": 84
+      },
+      {
+        "text": "biopsy",
+        "type": "Procedure",
+        "start": 115,
+        "end": 121
+      },
+      {
+        "text": "X-ray",
+        "type": "Procedure",
+        "start": 127,
+        "end": 132
+      }
+    ],
+    "relations": [
+      {
+        "type": "treats",
+        "head": {
+          "text": "metformin",
+          "type": "Drug",
+          "start": 75,
+          "end": 84
+        },
+        "tail": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 46,
+          "end": 69
+        },
+        "confidence": 0.88
+      },
+      {
+        "type": "treats",
+        "head": {
+          "text": "metformin",
+          "type": "Drug",
+          "start": 75,
+          "end": 84
+        },
+        "tail": {
+          "text": "urinary tract infection",
+          "type": "Disease",
+          "start": 46,
+          "end": 69
+        },
+        "confidence": 0.95
+      }
+    ],
+    "metadata": {
+      "id": 100,
+      "synthetic": true
+    }
+  }
+]

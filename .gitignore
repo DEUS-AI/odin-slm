@@ -41,12 +41,7 @@ uv.lock
 .ipynb_checkpoints/
 
 # Data
-data/raw/*
-data/processed/*
-data/datasets/*
-!data/raw/.gitkeep
-!data/processed/.gitkeep
-!data/datasets/.gitkeep
+# (tracked - 74MB total)
 
 # Models and experiments
 experiments/*
